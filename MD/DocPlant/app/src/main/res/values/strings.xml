@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">DocPlant</string>
+    <string name="register">REGISTER</string>
+    <string name="name">Name</string>
+    <string name="title_login_page">Welcome to the DocPlant</string>
+    <string name="title_signup_page">Please fill in your data</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="copyright">© 2022 DocPlant</string>
+    <string name="message_login_page">Please login</string>
+    <string name="login">Login</string>
+</resources>
