@@ -1,18 +1,26 @@
-package com.dicoding.picodiploma.docplant.ui.main
+package com.dicoding.picodiploma.docplant.ui.auth.register
 
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowInsets
 import android.view.WindowManager
 import com.dicoding.picodiploma.docplant.R
+import com.dicoding.picodiploma.docplant.databinding.ActivityRegisterBinding
+import com.dicoding.picodiploma.docplant.ui.auth.login.LoginActivity
 
-class MainActivity : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityRegisterBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityRegisterBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         setupView()
+        setupAction()
     }
 
     private fun setupView() {
@@ -26,5 +34,12 @@ class MainActivity : AppCompatActivity() {
             )
         }
         supportActionBar?.hide()
+    }
+
+    private fun setupAction() {
+        binding.login.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

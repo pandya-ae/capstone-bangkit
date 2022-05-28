@@ -8,5 +8,8 @@
     <string name="password">Password</string>
     <string name="copyright">© 2022 DocPlant</string>
     <string name="message_login_page">Please login</string>
+    <string name="have">Already have an account?</string>
     <string name="login">Login</string>
+    <string name="dont">Don\'t have an account?</string>
+    <string name="sign_up">Sign Up</string>
 </resources>
