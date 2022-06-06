@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DocPlant">
         <activity
-            android:name=".ui.auth.login.LoginActivity"
+            android:name=".ui.splash.SplashActivity"
             android:exported="true"
             android:launchMode="singleTask">
             <intent-filter>
@@ -19,7 +19,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity
+            android:name=".ui.auth.login.LoginActivity"
+            android:exported="true"
+            android:launchMode="singleTask">
+        </activity>
         <activity
             android:name=".ui.auth.register.RegisterActivity"
             android:exported="true" />

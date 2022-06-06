@@ -9,6 +9,7 @@ import android.view.WindowInsets
 import android.view.WindowManager
 import com.dicoding.picodiploma.docplant.R
 import com.dicoding.picodiploma.docplant.databinding.ActivityLoginBinding
+import com.dicoding.picodiploma.docplant.ui.HomeActivity
 import com.dicoding.picodiploma.docplant.ui.auth.register.RegisterActivity
 import com.dicoding.picodiploma.docplant.ui.main.MainActivity
 
@@ -44,7 +45,7 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.btnLogin.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         }
     }
