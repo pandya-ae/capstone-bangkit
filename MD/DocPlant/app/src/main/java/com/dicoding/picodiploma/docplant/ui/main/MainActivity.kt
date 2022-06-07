@@ -1,36 +1,27 @@
 package com.dicoding.picodiploma.docplant.ui.main
 
-import android.content.Intent
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import android.view.WindowInsets
-import android.view.WindowManager
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import com.dicoding.picodiploma.docplant.R
-import com.dicoding.picodiploma.docplant.ui.Home
-import com.dicoding.picodiploma.docplant.ui.HomeActivity
+import com.dicoding.picodiploma.docplant.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        supportActionBar?.hide()
-        Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, HomeActivity::class.java)
-            startActivity(intent)
-            finish()
-        }, 3000)
+        val navView: BottomNavigationView = binding.navView
 
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_home) as NavHostFragment
+        val navController = navHostFragment.navController
+        navView.setupWithNavController(navController)
     }
-    override fun onPause() {
-        super.onPause()
-    }
-
-    override fun onResume() {
-        super.onResume()
-    }
-
 }
