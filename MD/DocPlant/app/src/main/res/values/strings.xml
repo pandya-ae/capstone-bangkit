@@ -25,6 +25,7 @@
     <string name="upload_img">Upload Image</string>
     <string name="login_success">Login Success</string>
     <string name="login_err">Wrong email or password!</string>
+    <string name="register_success">Register success, please login!</string>
     <string name="logo">Logo</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
