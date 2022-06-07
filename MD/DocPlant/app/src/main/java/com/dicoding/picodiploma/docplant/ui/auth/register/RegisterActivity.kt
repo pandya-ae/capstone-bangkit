@@ -42,4 +42,5 @@ class RegisterActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+    //testing
 }
