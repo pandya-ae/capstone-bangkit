@@ -1,21 +1,20 @@
-package com.dicoding.picodiploma.docplant.ui.main
+package com.dicoding.picodiploma.docplant.ui.scan
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.dicoding.picodiploma.docplant.R
-import com.dicoding.picodiploma.docplant.databinding.ActivityMainBinding
-import com.dicoding.picodiploma.docplant.ui.scan.ScanActivity
+import com.dicoding.picodiploma.docplant.databinding.ActivityScanBinding
+import com.dicoding.picodiploma.docplant.ui.main.MainActivity
 import com.dicoding.picodiploma.docplant.ui.setting.SettingActivity
 
+class ScanActivity : AppCompatActivity() {
 
-class MainActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityScanBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityScanBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setNavigation()
@@ -25,12 +24,13 @@ class MainActivity : AppCompatActivity() {
         val navigation = binding.navView
         navigation.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.Navigation_Home -> {}
-
-                R.id.Navigation_Scan -> {
-                    startActivity(Intent(this, ScanActivity::class.java))
+                R.id.Navigation_Home -> {
+                    onMenuItemSelected(R.id.Navigation_Home, item)
+                    startActivity(Intent(this, MainActivity::class.java))
                     overridePendingTransition(0,0)
                 }
+
+                R.id.Navigation_Scan -> { }
 
                 R.id.Navigation_Setting -> {
                     startActivity(Intent(this, SettingActivity::class.java))
@@ -39,9 +39,5 @@ class MainActivity : AppCompatActivity() {
             }
             false
         }
-    }
-
-    companion object {
-        const val EXTRA_TOKEN = "extra_token"
     }
 }
