@@ -135,4 +135,5 @@ class RegisterActivity : AppCompatActivity() {
 //            binding.progressBar.visibility = View.GONE
 //        }
     }
+    //testing
 }
