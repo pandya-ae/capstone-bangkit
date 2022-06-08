@@ -7,7 +7,6 @@
     <string name="name">Name</string>
     <string name="title_login_page">Welcome to the DocPlant</string>
     <string name="title_signup_page">Please fill in your data</string>
-    <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="copyright">© 2022 DocPlant</string>
     <string name="message_login_page">Please login</string>
@@ -18,7 +17,6 @@
     <string name="setting">Setting</string>
     <string name="scan">Scan</string>
     <string name="language_setting">Language Setting</string>
-    <string name="logout">Logout</string>
     <string name="upload_pict">Upload picture for scan</string>
     <string name="select_image">Select image from</string>
     <string name="select_from_camera">Camera</string>

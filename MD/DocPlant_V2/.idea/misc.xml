@@ -6,8 +6,11 @@
         <entry key="app/src/main/res/drawable/custom_button.xml" value="0.1145" />
         <entry key="app/src/main/res/drawable/ic_baseline_history_24.xml" value="0.194" />
         <entry key="app/src/main/res/drawable/ic_baseline_image_24.xml" value="0.194" />
+        <entry key="app/src/main/res/drawable/ic_switch_camera.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_camera.xml" value="0.15579710144927536" />
+        <entry key="app/src/main/res/layout/activity_custom_camera.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.15579710144927536" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.24375" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.11854103343465046" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.11854103343465046" />
