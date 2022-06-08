@@ -54,6 +54,7 @@ class CameraActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityCameraBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.hide()
 
         if (!allPermissionsGranted()) {
             ActivityCompat.requestPermissions(
