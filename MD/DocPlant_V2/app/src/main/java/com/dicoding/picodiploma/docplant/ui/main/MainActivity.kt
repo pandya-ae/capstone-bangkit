@@ -1,4 +1,4 @@
-package com.dicoding.picodiploma.docplant
+package com.dicoding.picodiploma.docplant.ui.main
 
 import android.content.Context
 import android.content.Intent
@@ -17,11 +17,14 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.dicoding.picodiploma.docplant.R
 import com.dicoding.picodiploma.docplant.data.datastore.DataStoreModel
 import com.dicoding.picodiploma.docplant.data.datastore.UserPreference
 import com.dicoding.picodiploma.docplant.databinding.ActivityMainBinding
 import com.dicoding.picodiploma.docplant.helper.ViewModelFactory
 import com.dicoding.picodiploma.docplant.ui.auth.login.LoginActivity
+import com.dicoding.picodiploma.docplant.ui.camera.CameraActivity
+import com.dicoding.picodiploma.docplant.ui.setting.SettingActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class MainActivity : AppCompatActivity() {
@@ -35,58 +38,27 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        val navView: BottomNavigationView = binding.navView
-
-        val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_home, R.id.navigation_history, R.id.navigation_profile
-            )
-        )
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+        supportActionBar?.hide()
 
         setupViewModel()
+        setupAction()
     }
 
     private fun setupViewModel() {
         dataStoreModel = ViewModelProvider(this, ViewModelFactory(UserPreference.getInstance(dataStore)))[DataStoreModel::class.java]
     }
 
-    private fun showLogoutDialog() {
-        MaterialAlertDialogBuilder(this)
-            .setTitle(getString(R.string.logout_dialog_title))
-            .setMessage(getString(R.string.logout_dialog_message))
-            .setNegativeButton(getString(R.string.cancel)) { dialog, _ ->
-                dialog.dismiss()
+    private fun setupAction() {
+        binding.apply {
+            btnScanMenu.setOnClickListener {
+                startActivity(Intent(this@MainActivity, CameraActivity::class.java))
             }
-            .setPositiveButton(getString(R.string.logout)) { _, _ ->
-                dataStoreModel.logout()
-                Intent(this, LoginActivity::class.java).also { intent ->
-                    startActivity(intent)
-                    this.finish()
-                }
-                Toast.makeText(this, getString(R.string.logout_message_success), Toast.LENGTH_SHORT).show()
-            }.show()
-    }
+            btnSearchMenu.setOnClickListener {
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.navbar_menu, menu)
-        return super.onCreateOptionsMenu(menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-
-            R.id.logout -> {
-                showLogoutDialog()
-                dataStoreModel.logout()
-                true
             }
-            else -> super.onOptionsItemSelected(item)
+            btnSetting.setOnClickListener {
+                startActivity(Intent(this@MainActivity, SettingActivity::class.java))
+            }
         }
     }
 
