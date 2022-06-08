@@ -24,4 +24,8 @@ class MainActivity : AppCompatActivity() {
         val navController = navHostFragment.navController
         navView.setupWithNavController(navController)
     }
+
+    companion object {
+        const val EXTRA_TOKEN = "extra_token"
+    }
 }
