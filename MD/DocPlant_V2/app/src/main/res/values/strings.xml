@@ -29,7 +29,6 @@
     <string name="camera">Camera</string>
     <string name="gallery">Gallery</string>
     <string name="upload">Upload</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="add_image">Add Image</string>
     <string name="title_history">History</string>
@@ -38,4 +37,8 @@
     <string name="email">Email</string>
     <string name="phone_number">Phone Number</string>
     <string name="logout">Logout</string>
+    <string name="logout_dialog_title">Logout</string>
+    <string name="logout_dialog_message">Are you sure want to logout?</string>
+    <string name="logout_message_success">Logged out successfully</string>
+    <string name="cancel">Cancel</string>
 </resources>
