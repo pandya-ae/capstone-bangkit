@@ -2,20 +2,25 @@ package com.dicoding.picodiploma.docplant.ui.auth.login
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Patterns
+import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.Toast
+import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import com.dicoding.picodiploma.docplant.MainActivity
+import com.dicoding.picodiploma.docplant.ui.main.MainActivity
 import com.dicoding.picodiploma.docplant.R
 import com.dicoding.picodiploma.docplant.data.UserModel
 import com.dicoding.picodiploma.docplant.data.datastore.DataStoreModel
@@ -33,7 +38,6 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var dataStoreModel: DataStoreModel
     private var loginJob: Job = Job()
     private var messgae = ""
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,10 +69,10 @@ class LoginActivity : AppCompatActivity() {
 
     private fun setupAction() {
         form()
-//        binding.bt.setOnClickListener {
-//            val intent = Intent(this, RegisterActivity::class.java)
-//            startActivity(intent)
-//        }
+        binding.signup.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
         binding.btnLogin.setOnClickListener{
             binding.etEmail.clearFocus()
             binding.etPassword.clearFocus()
@@ -83,7 +87,7 @@ class LoginActivity : AppCompatActivity() {
                     loginViewModel.userLogin(email, password).collect { res ->
                         res.onSuccess {
                             it.loginResult.let { responseLogin ->
-                                val user = UserModel(responseLogin.name.toString(), email, responseLogin.token.toString(), true)
+                                val user = UserModel(responseLogin.name, email, responseLogin.token, true)
                                 dataStoreModel.saveUser(user)
                                 showLoading(false)
                                 val intent = Intent(this@LoginActivity, MainActivity::class.java)
@@ -108,7 +112,12 @@ class LoginActivity : AppCompatActivity() {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
             }
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-                setMyButtonEnable()
+                if (s.toString().isNotEmpty() && Patterns.EMAIL_ADDRESS.matcher(s).matches()){
+                    binding.etEmail.error = null
+                    setMyButtonEnable()
+                } else {
+                    binding.etEmail.error = "Invalid Email"
+                }
             }
             override fun afterTextChanged(s: Editable) {
             }
@@ -119,7 +128,12 @@ class LoginActivity : AppCompatActivity() {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
             }
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-                setMyButtonEnable()
+                if (s.toString().isNotEmpty() && s.toString().length >= 6){
+                    binding.etPassword.error = null
+                    setMyButtonEnable()
+                } else {
+                    binding.etPassword.error = "Password at least 6 character"
+                }
             }
             override fun afterTextChanged(s: Editable) {
             }
@@ -127,11 +141,11 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun showLoading(state: Boolean){
-//        if (state){
-//            binding.progressBar.visibility = View.VISIBLE
-//        } else {
-//            binding.progressBar.visibility = View.GONE
-//        }
+        if (state){
+            binding.progressBar.visibility = View.VISIBLE
+        } else {
+            binding.progressBar.visibility = View.GONE
+        }
     }
 
     private fun setMyButtonEnable() {

@@ -15,8 +15,8 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import com.dicoding.picodiploma.docplant.MainActivity
-import com.dicoding.picodiploma.docplant.MainActivity.Companion.EXTRA_TOKEN
+import com.dicoding.picodiploma.docplant.ui.main.MainActivity
+import com.dicoding.picodiploma.docplant.ui.main.MainActivity.Companion.EXTRA_TOKEN
 import com.dicoding.picodiploma.docplant.R
 import com.dicoding.picodiploma.docplant.data.datastore.DataStoreModel
 import com.dicoding.picodiploma.docplant.data.datastore.UserPreference
