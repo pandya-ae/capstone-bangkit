@@ -1,5 +1,6 @@
 package com.dicoding.picodiploma.docplant.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.dicoding.picodiploma.docplant.databinding.FragmentHomeBinding
+import com.dicoding.picodiploma.docplant.ui.camera.CameraActivity
 
 class HomeFragment : Fragment() {
 
@@ -32,6 +34,12 @@ class HomeFragment : Fragment() {
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
+
+        _binding!!.btnAddImage.setOnClickListener {
+            val intent = Intent (requireContext(), CameraActivity::class.java)
+            startActivity(intent)
+        }
+
         return root
     }
 
