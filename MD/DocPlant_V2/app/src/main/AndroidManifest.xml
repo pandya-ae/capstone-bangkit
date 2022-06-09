@@ -20,6 +20,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DocPlant">
         <activity
+            android:name=".ui.information.InformationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ResultActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.setting.SettingActivity"
             android:exported="false" />
         <activity

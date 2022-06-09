@@ -41,4 +41,21 @@
     <string name="logout_dialog_message">Are you sure want to logout?</string>
     <string name="logout_message_success">Logged out successfully</string>
     <string name="cancel">Cancel</string>
+    <string name="scan_plant_disease">Scan plant disease</string>
+    <string name="start_detect_plant_disease">Start detect plant disease!</string>
+    <string name="last_search">Last search</string>
+    <string name="last_search_plant_disease">Last search plant disease!</string>
+    <string name="change_language_and_logout"><![CDATA[Change language & logout]]></string>
+    <string name="welcome_to">Welcome to</string>
+    <string name="result_diseases">Result diseases</string>
+    <string name="diseases_title">Diseases:</string>
+    <string name="example_diseases">Example diseases</string>
+    <string name="description_title">Description:</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse felis ipsum, egestas eu nisi eu, pretium aliquet turpis. Pellentesque lacinia ipsum elit, at venenatis enim fermentum ut. Etiam varius consequat augue sit amet ultrices. Duis et metus eget risus tristique bibendum vitae sed nisl. Suspendisse ultricies blandit rutrum. Nam viverra urna eget mi porttitor, ac dictum augue facilisis. Nulla vitae nunc id nulla tincidunt malesuada sollicitudin eget lacus. Quisque sit amet congue velit, in aliquet ante. Donec volutpat eu mi malesuada fermentum. Vivamus id augue sapien. Fusce rutrum, diam vitae lacinia mollis, sem quam dictum arcu, eu fermentum quam diam sit amet ex. In sed placerat quam, et euismod neque. Ut at mattis sapien. Vivamus tincidunt molestie lobortis.</string>
+    <string name="solution_title">Solution:</string>
+    <string name="diseases_can_we_scan">Diseases can we scan</string>
+    <string name="example_diseases_list">- Lorem ipsum dolor sit amet \n- Lorem ipsum dolor sit amet \n- Lorem ipsum dolor sit amet \n- Lorem ipsum dolor sit amet \n- Lorem ipsum dolor sit amet \n- Lorem ipsum dolor sit amet</string>
+    <string name="banana_diseases">Banana diseases</string>
+    <string name="tomato_diseases">Tomato diseases</string>
+    <string name="information">Information</string>
 </resources>
