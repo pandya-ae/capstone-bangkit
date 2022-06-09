@@ -81,6 +81,7 @@ class CameraActivity : AppCompatActivity() {
             val myFile = uriToFile(selectedImg, this@CameraActivity)
             getFile = myFile
 
+            binding.previewImageView.setImageURI(selectedImg)
         }
     }
 
