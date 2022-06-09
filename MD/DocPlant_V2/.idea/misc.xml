@@ -25,18 +25,24 @@
         <entry key="..\:/kuliah/Bangkit/Android_Studio/capstone-bangkit/MD/DocPlant_V2/app/src/main/res/layout/fragment_profile.xml" value="0.3390625" />
         <entry key="..\:/kuliah/Bangkit/Android_Studio/capstone-bangkit/MD/DocPlant_V2/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3390625" />
         <entry key="..\:/kuliah/Bangkit/Android_Studio/capstone-bangkit/MD/DocPlant_V2/app/src/main/res/menu/navbar_menu.xml" value="0.3390625" />
+        <entry key="app/src/main/res/drawable/border.xml" value="0.2495" />
         <entry key="app/src/main/res/drawable/custom_button.xml" value="0.1145" />
+        <entry key="app/src/main/res/drawable/edge.xml" value="0.211" />
+        <entry key="app/src/main/res/drawable/ic_baseline_camera_alt_24.xml" value="0.211" />
         <entry key="app/src/main/res/drawable/ic_baseline_history_24.xml" value="0.194" />
         <entry key="app/src/main/res/drawable/ic_baseline_image_24.xml" value="0.194" />
         <entry key="app/src/main/res/drawable/ic_baseline_logout_24.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_camera_24.xml" value="0.2495" />
         <entry key="app/src/main/res/drawable/ic_switch_camera.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_camera.xml" value="0.15579710144927536" />
         <entry key="app/src/main/res/layout/activity_custom_camera.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.165" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.15579710144927536" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.335" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.24375" />
+        <entry key="app/src/main/res/layout/activity_setting.xml" value="0.18568840579710144" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.11854103343465046" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.11854103343465046" />
+        <entry key="app/src/main/res/layout/fragment_history.xml" value="0.18568840579710144" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.165" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.165" />
