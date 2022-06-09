@@ -53,16 +53,18 @@
             android:layout_width="match_parent"
             android:layout_height="0dp">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/preview_Image_View"
                 android:layout_width="400dp"
                 android:layout_height="400dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
+                android:background="@drawable/border"
                 android:contentDescription="@string/upload_pict"
                 android:scaleType="centerCrop"
                 android:src="@drawable/upload"
+                app:shapeAppearanceOverlay="@style/radiusImage"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
