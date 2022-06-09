@@ -22,6 +22,7 @@ import com.dicoding.picodiploma.docplant.data.datastore.DataStoreModel
 import com.dicoding.picodiploma.docplant.data.datastore.UserPreference
 import com.dicoding.picodiploma.docplant.databinding.ActivityMainBinding
 import com.dicoding.picodiploma.docplant.helper.ViewModelFactory
+import com.dicoding.picodiploma.docplant.ui.ResultActivity
 import com.dicoding.picodiploma.docplant.ui.auth.login.LoginActivity
 import com.dicoding.picodiploma.docplant.ui.camera.CameraActivity
 import com.dicoding.picodiploma.docplant.ui.setting.SettingActivity
@@ -54,7 +55,7 @@ class MainActivity : AppCompatActivity() {
                 startActivity(Intent(this@MainActivity, CameraActivity::class.java))
             }
             btnSearchMenu.setOnClickListener {
-
+                startActivity(Intent(this@MainActivity, ResultActivity::class.java))
             }
             btnSetting.setOnClickListener {
                 startActivity(Intent(this@MainActivity, SettingActivity::class.java))
