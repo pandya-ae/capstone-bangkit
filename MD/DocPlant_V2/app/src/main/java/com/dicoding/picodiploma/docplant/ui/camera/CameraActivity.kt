@@ -12,6 +12,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.dicoding.picodiploma.docplant.databinding.ActivityCameraBinding
+import com.dicoding.picodiploma.docplant.ui.ResultActivity
 import com.dicoding.picodiploma.docplant.ui.camera.cameraX.CustomCameraActivity
 import com.dicoding.picodiploma.docplant.ui.information.InformationActivity
 import com.dicoding.picodiploma.docplant.utils.rotateBitmap
@@ -69,10 +70,13 @@ class CameraActivity : AppCompatActivity() {
 
     private fun setupAction() {
         binding.apply {
-            btnCamera.setOnClickListener { startCameraX() }
-            btnGallery.setOnClickListener { startGallery() }
             btnInformation.setOnClickListener{
                 startActivity(Intent(this@CameraActivity, InformationActivity::class.java))
+            }
+            btnCamera.setOnClickListener { startCameraX() }
+            btnGallery.setOnClickListener { startGallery() }
+            btnUpload.setOnClickListener {
+                startActivity(Intent(this@CameraActivity, ResultActivity::class.java))
             }
         }
     }
