@@ -13,6 +13,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.dicoding.picodiploma.docplant.databinding.ActivityCameraBinding
 import com.dicoding.picodiploma.docplant.ui.camera.cameraX.CustomCameraActivity
+import com.dicoding.picodiploma.docplant.ui.information.InformationActivity
 import com.dicoding.picodiploma.docplant.utils.rotateBitmap
 import com.dicoding.picodiploma.docplant.utils.uriToFile
 import java.io.File
@@ -70,6 +71,9 @@ class CameraActivity : AppCompatActivity() {
         binding.apply {
             btnCamera.setOnClickListener { startCameraX() }
             btnGallery.setOnClickListener { startGallery() }
+            btnInformation.setOnClickListener{
+                startActivity(Intent(this@CameraActivity, InformationActivity::class.java))
+            }
         }
     }
 
