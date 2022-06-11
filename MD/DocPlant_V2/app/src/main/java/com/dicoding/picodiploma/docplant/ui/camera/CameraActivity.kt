@@ -1,26 +1,38 @@
 package com.dicoding.picodiploma.docplant.ui.camera
 
 import android.Manifest
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.dicoding.picodiploma.docplant.data.BitmapModel
+import androidx.core.content.FileProvider
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.preferencesDataStore
+import androidx.lifecycle.ViewModelProvider
+import com.dicoding.picodiploma.docplant.data.UserModel
+import com.dicoding.picodiploma.docplant.data.datastore.DataStoreModel
+import com.dicoding.picodiploma.docplant.data.datastore.UserPreference
 import com.dicoding.picodiploma.docplant.databinding.ActivityCameraBinding
+import com.dicoding.picodiploma.docplant.helper.ViewModelFactory
 import com.dicoding.picodiploma.docplant.ml.ModelBaruFix
-import com.dicoding.picodiploma.docplant.ui.ResultActivity
 import com.dicoding.picodiploma.docplant.ui.camera.cameraX.CustomCameraActivity
 import com.dicoding.picodiploma.docplant.ui.information.InformationActivity
+import com.dicoding.picodiploma.docplant.ui.result.ResultActivity
+import com.dicoding.picodiploma.docplant.utils.createCustomTempFile
 import com.dicoding.picodiploma.docplant.utils.rotateBitmap
+import com.dicoding.picodiploma.docplant.utils.rotateFile
 import com.dicoding.picodiploma.docplant.utils.uriToFile
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.image.TensorImage
@@ -30,7 +42,10 @@ import java.io.File
 class CameraActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCameraBinding
-    private var getFile: File? = null
+    private lateinit var dataStoreModel: DataStoreModel
+    private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
+    private lateinit var getFile: File
+    private lateinit var currentPhotoPath: String
     private lateinit var imageView: ImageView
     lateinit var bitmap: Bitmap
     var result = " "
@@ -77,7 +92,12 @@ class CameraActivity : AppCompatActivity() {
                 REQUEST_CODE_PERMISSIONS
             )
         }
+        setupViewMode()
         setupAction()
+    }
+
+    private fun setupViewMode() {
+        dataStoreModel = ViewModelProvider(this, ViewModelFactory(UserPreference.getInstance(dataStore)))[DataStoreModel::class.java]
     }
 
     private fun setupAction() {
@@ -85,17 +105,54 @@ class CameraActivity : AppCompatActivity() {
             btnInformation.setOnClickListener{
                 startActivity(Intent(this@CameraActivity, InformationActivity::class.java))
             }
-            btnCamera.setOnClickListener { startCameraX() }
+            btnCamera.setOnClickListener { startTakePhoto() }
             btnGallery.setOnClickListener { startGallery() }
             btnUpload.setOnClickListener {
-                val diseaseResult = BitmapModel(
-                    bitmap,
-                    result
-                )
-                val moveWithObjectIntent = Intent(this@CameraActivity, ResultActivity::class.java)
-                moveWithObjectIntent.putExtra(ResultActivity.EXTRA_RESULT, diseaseResult)
-                startActivity(moveWithObjectIntent)
+                val filePath = getFile.path
+//                val diseaseResult = BitmapModel(
+//                    bitmap,
+//                    result,
+//                    filePath
+//                )
+
+                Log.e("file path", getFile.path)
+                dataStoreModel.getUser().observe(this@CameraActivity) { user ->
+                    val update = UserModel(user.name, user.email, filePath, result, true)
+
+                    dataStoreModel.saveUser(update)
+                }
+
+//                val moveWithObjectIntent = Intent(this@CameraActivity, ResultActivity::class.java)
+//                moveWithObjectIntent.putExtra(ResultActivity.EXTRA_RESULT, diseaseResult)
+                startActivity(Intent(this@CameraActivity, ResultActivity::class.java))
             }
+        }
+    }
+
+    private fun startTakePhoto() {
+        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        intent.resolveActivity(packageManager)
+        createCustomTempFile(application).also {
+            val photoURI: Uri = FileProvider.getUriForFile(
+                this,
+                "com.dicoding.picodiploma.docplant",
+                it
+            )
+            currentPhotoPath = it.absolutePath
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
+            launcherIntentCamera.launch(intent)
+        }
+    }
+
+    private val launcherIntentCamera = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { res ->
+        if (res.resultCode == RESULT_OK) {
+            val myFile = File(currentPhotoPath)
+            val result = rotateFile(BitmapFactory.decodeFile(myFile.path), currentPhotoPath)
+            val bitmap = BitmapFactory.decodeFile(result.path)
+            getFile = result
+
+            DiseaseModel(bitmap)
+            binding.previewImageView.setImageBitmap(bitmap)
         }
     }
 
@@ -153,7 +210,7 @@ class CameraActivity : AppCompatActivity() {
         val label = application.assets.open(name_file).bufferedReader().use { it.readText() }
         val labels = label.split("\n")
         val model = ModelBaruFix.newInstance(this)
-        var bitmapscale = Bitmap.createScaledBitmap(bitmap, 150, 150, true)
+        val bitmapscale = Bitmap.createScaledBitmap(bitmap, 150, 150, true)
         binding.previewImageView.setImageBitmap(bitmapscale)
         Log.e("Bitmap", bitmapscale.toString())
 
@@ -183,9 +240,9 @@ class CameraActivity : AppCompatActivity() {
         model.close()
     }
 
-    fun getMax(arr: FloatArray, size: Int): Int {
-        var ind = 0;
-        var min = 0.0f;
+    private fun getMax(arr: FloatArray, size: Int): Int {
+        var ind = 0
+        var min = 0.0f
 
         for (i in 0 until size) {
             Log.e("get: ", i.toString())
@@ -195,7 +252,7 @@ class CameraActivity : AppCompatActivity() {
                 Log.e("getMax: ", arr[i].toString())
 
                 min = arr[i]
-                ind = i;
+                ind = i
             }
         }
         return ind

@@ -5,8 +5,10 @@ import android.content.ContentResolver
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Matrix
+import android.media.ExifInterface
 import android.net.Uri
 import android.os.Environment
+import com.bumptech.glide.load.resource.bitmap.TransformationUtils
 import com.dicoding.picodiploma.docplant.R
 import java.io.*
 import java.text.SimpleDateFormat
@@ -78,4 +80,31 @@ fun rotateBitmap(bitmap: Bitmap, isBackCamera: Boolean = false): Bitmap {
             true
         )
     }
+}
+
+fun rotateFile(bitmap: Bitmap, currentPhotoPath: String): File {
+    val file = File(currentPhotoPath)
+    val exif = ExifInterface(currentPhotoPath)
+    val os: OutputStream
+    val orientation: Int = exif.getAttributeInt(
+        ExifInterface.TAG_ORIENTATION,
+        ExifInterface.ORIENTATION_UNDEFINED
+    )
+
+    val rotatedBitmap: Bitmap = when (orientation) {
+        ExifInterface.ORIENTATION_ROTATE_90 -> TransformationUtils.rotateImage(bitmap, 90)
+        ExifInterface.ORIENTATION_ROTATE_180 -> TransformationUtils.rotateImage(bitmap, 180)
+        ExifInterface.ORIENTATION_ROTATE_270 -> TransformationUtils.rotateImage(bitmap, 270)
+        ExifInterface.ORIENTATION_NORMAL -> bitmap
+        else -> bitmap
+    }
+    try {
+        os = FileOutputStream(file)
+        rotatedBitmap.compress(Bitmap.CompressFormat.JPEG, 100, os)
+        os.flush()
+        os.close()
+    } catch (e: Exception) {
+        e.printStackTrace()
+    }
+    return file
 }

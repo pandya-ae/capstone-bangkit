@@ -87,7 +87,7 @@ class LoginActivity : AppCompatActivity() {
                     loginViewModel.userLogin(email, password).collect { res ->
                         res.onSuccess {
                             it.loginResult.let { responseLogin ->
-                                val user = UserModel(responseLogin.name, email, responseLogin.token, true)
+                                val user = UserModel(responseLogin.name, email, "-", "-", true)
                                 dataStoreModel.saveUser(user)
                                 showLoading(false)
                                 val intent = Intent(this@LoginActivity, MainActivity::class.java)
