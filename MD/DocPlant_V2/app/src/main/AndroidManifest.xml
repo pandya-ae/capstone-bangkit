@@ -23,7 +23,7 @@
             android:name=".ui.information.InformationActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.ResultActivity"
+            android:name=".ui.result.ResultActivity"
             android:exported="false" />
         <activity
             android:name=".ui.setting.SettingActivity"
