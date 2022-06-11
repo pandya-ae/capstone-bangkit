@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "145380972763",
+    "project_id": "docplant-c22-ps262",
+    "storage_bucket": "docplant-c22-ps262.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:145380972763:android:98bf50b30652d8445954fe",
+        "android_client_info": {
+          "package_name": "com.dicoding.picodiploma.docplant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "145380972763-mgrgs2kgvrpgu5em1e28b5dnnb9j3u7i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPNpz8FvWXFmMModVeknYQGF4WNI4zJsk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "145380972763-mgrgs2kgvrpgu5em1e28b5dnnb9j3u7i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

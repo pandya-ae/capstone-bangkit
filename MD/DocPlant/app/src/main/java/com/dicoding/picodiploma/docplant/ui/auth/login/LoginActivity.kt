@@ -1,40 +1,27 @@
 package com.dicoding.picodiploma.docplant.ui.auth.login
 
-import android.content.Context
 import android.content.Intent
 import android.os.Build
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
+import android.provider.Settings
+import android.util.Log
 import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import androidx.datastore.core.DataStore
-import androidx.datastore.preferences.core.Preferences
-import androidx.datastore.preferences.preferencesDataStore
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
 import com.dicoding.picodiploma.docplant.R
-import com.dicoding.picodiploma.docplant.data.datastore.DataStoreModel
-import com.dicoding.picodiploma.docplant.data.datastore.UserPreference
 import com.dicoding.picodiploma.docplant.databinding.ActivityLoginBinding
-import com.dicoding.picodiploma.docplant.helper.ViewModelFactory
-import com.dicoding.picodiploma.docplant.model.UserModel
 import com.dicoding.picodiploma.docplant.ui.auth.register.RegisterActivity
 import com.dicoding.picodiploma.docplant.ui.main.MainActivity
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.launch
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
-class LoginActivity : AppCompatActivity() {
+class  LoginActivity : AppCompatActivity() {
 
-    private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
     private lateinit var binding: ActivityLoginBinding
-    private lateinit var loginViewModel: LoginViewModel
-    private lateinit var dataStoreModel: DataStoreModel
-    private var loginJob: Job = Job()
-    private var messgae = ""
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +29,6 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setupView()
-        setupViewModel()
         setupAction()
     }
 
@@ -59,86 +45,72 @@ class LoginActivity : AppCompatActivity() {
         supportActionBar?.hide()
     }
 
-    private fun setupViewModel() {
-        dataStoreModel = ViewModelProvider(this, ViewModelFactory(UserPreference.getInstance(dataStore)))[DataStoreModel::class.java]
-        loginViewModel = ViewModelProvider(this)[LoginViewModel::class.java]
-    }
-
     private fun setupAction() {
-        form()
+
         binding.signup.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
         binding.btnLogin.setOnClickListener{
-            binding.etEmail.clearFocus()
-            binding.etPassword.clearFocus()
-            showLoading(true)
-            val email = binding.etEmail.text.toString()
-            val password = binding.etPassword.text.toString()
-            messgae = ""
-            lifecycleScope.launchWhenResumed {
-                if (loginJob.isActive) loginJob.cancel()
+            val db = FirebaseFirestore.getInstance()
 
-                loginJob = launch {
-                    loginViewModel.userLogin(email, password).collect { res ->
-                        res.onSuccess {
-                            it.loginResult.let { responseLogin ->
-                                val user = UserModel(responseLogin?.name.toString(), email, responseLogin?.token.toString(), true)
-                                dataStoreModel.saveUser(user)
-                                showLoading(false)
-                                val intent = Intent(this@LoginActivity, MainActivity::class.java)
-                                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
-                                startActivity(intent)
-                            }
-                            Toast.makeText(this@LoginActivity,getString(R.string.login_success), Toast.LENGTH_SHORT).show()
-                        }
+            val user: MutableMap<String, Any> = HashMap()
+            user["email"] = "ayam@email.com"
+            user["nama"] = "akuganteng"
+            user["password"] = "ikankerapu"
 
-                        res.onFailure {
-                            Toast.makeText(this@LoginActivity,getString(R.string.login_err), Toast.LENGTH_SHORT).show()
-                            showLoading(false)
-                        }
-                    }
+            // Add a new document with a generated ID
+            db.collection("users")
+                .add(user)
+                .addOnSuccessListener { documentReference ->
+                    Toast.makeText(
+                        this, "You are sukses", Toast.LENGTH_SHORT
+                    ).show()
                 }
-            }
+                .addOnFailureListener { e ->
+                    Toast.makeText(
+                        this, "You are gak sukses", Toast.LENGTH_SHORT
+                    ).show()
+                }
+            val email: String = binding.etEmail.text.toString().trim { it <= ' '}
+            val password: String = binding.etPassword.text.toString().trim() { it <= ' '}
+
+            FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        val firebaseUser: FirebaseUser = task.result!!.user!!
+
+//                        Toast.makeText(
+//                            this, "You are logged in successfully", Toast.LENGTH_SHORT
+//                        ).show()
+
+                        /*db.collection("users")
+                            .get()
+                            .addOnSuccessListener { result ->
+                                for (document in result) {
+                                    Log.d("200", "${document.id} => ${document.data}")
+                                }
+                            }
+                            .addOnFailureListener { exception ->
+                                Log.w("404", "Error getting documents.", exception)
+                            }
+
+                         */
+                        val intent = Intent(this, MainActivity::class.java)
+                        intent.flags =
+                            Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        intent.putExtra("user_id", FirebaseAuth.getInstance().currentUser!!.uid)
+                        intent.putExtra("email_id", email)
+                        startActivity(intent)
+                        finish()
+                    } else {
+                        Toast.makeText(
+                            this, task.exception!!.message.toString(), Toast.LENGTH_SHORT
+                        ).show()
+                    }
+
+                }
         }
-    }
-
-    private fun form(){
-        binding.etEmail.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
-            }
-            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-                setMyButtonEnable()
-            }
-            override fun afterTextChanged(s: Editable) {
-            }
-        })
-
-        binding.etPassword.addTextChangedListener(object : TextWatcher {
-
-            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
-            }
-            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-                setMyButtonEnable()
-            }
-            override fun afterTextChanged(s: Editable) {
-            }
-        })
-    }
-
-    private fun showLoading(state: Boolean){
-//        if (state){
-//            binding.progressBar.visibility = View.VISIBLE
-//        } else {
-//            binding.progressBar.visibility = View.GONE
-//        }
-    }
-
-    private fun setMyButtonEnable() {
-        val email = binding.etEmail.text.toString()
-        val password = binding.etPassword.text.toString()
-        binding.btnLogin.isEnabled = password.isNotEmpty() && email.isNotEmpty()
     }
 
 }

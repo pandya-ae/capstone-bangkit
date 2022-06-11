@@ -1,31 +1,39 @@
 package com.dicoding.picodiploma.docplant.ui.main
 
+import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupWithNavController
+import android.os.Handler
+import android.os.Looper
+import android.view.WindowInsets
+import android.view.WindowManager
 import com.dicoding.picodiploma.docplant.R
-import com.dicoding.picodiploma.docplant.databinding.ActivityMainBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.dicoding.picodiploma.docplant.ui.Home
+import com.dicoding.picodiploma.docplant.ui.HomeActivity
 
 class MainActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityMainBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_main)
 
-        val navView: BottomNavigationView = binding.navView
+        supportActionBar?.hide()
+        Handler(Looper.getMainLooper()).postDelayed({
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+            finish()
+        }, 3000)
 
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_home) as NavHostFragment
-        val navController = navHostFragment.navController
-        navView.setupWithNavController(navController)
+        val userId = intent.getStringExtra("user_id")
+        val emailId = intent.getStringExtra("email_id")
+
+    }
+    override fun onPause() {
+        super.onPause()
     }
 
-    companion object {
-        const val EXTRA_TOKEN = "extra_token"
+    override fun onResume() {
+        super.onResume()
     }
+
 }

@@ -3,20 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/bottom_nav"
-    app:startDestination="@id/Navigation_Home">
+    app:startDestination="@id/home2">
+
     <fragment
-        android:id="@+id/Navigation_Home"
-        android:name="com.dicoding.picodiploma.docplant.ui.home.HomeFragment"
-        android:label="@string/title_home"
+        android:id="@+id/home2"
+        android:name="com.dicoding.picodiploma.docplant.ui.Home"
+        android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
-    <fragment
-        android:id="@+id/Navigation_Scan"
-        android:name="com.dicoding.picodiploma.docplant.ui.scan.ScanFragment"
-        android:label="@string/scan"
-        tools:layout="@layout/fragment_scan" />
-    <fragment
-        android:id="@+id/Navigation_Setting"
-        android:name="com.dicoding.picodiploma.docplant.ui.setting.SettingFragment"
-        android:label="@string/setting"
-        tools:layout="@layout/fragment_setting" />
 </navigation>
