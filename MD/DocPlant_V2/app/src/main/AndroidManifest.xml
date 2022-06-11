@@ -20,10 +20,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DocPlant">
         <activity
+            android:name=".ui.camera.TryCameraActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.information.InformationActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.ResultActivity"
+            android:name=".ui.result.ResultActivity"
             android:exported="false" />
         <activity
             android:name=".ui.setting.SettingActivity"
@@ -54,6 +57,16 @@
         <activity
             android:name=".ui.main.MainActivity"
             android:exported="true" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.dicoding.picodiploma.docplant"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
 
         <provider
             android:name="androidx.core.content.FileProvider"

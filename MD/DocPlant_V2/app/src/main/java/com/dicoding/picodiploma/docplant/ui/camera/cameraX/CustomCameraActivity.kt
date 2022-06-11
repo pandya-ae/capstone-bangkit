@@ -1,6 +1,7 @@
 package com.dicoding.picodiploma.docplant.ui.camera.cameraX
 
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,6 +17,7 @@ import androidx.core.content.ContextCompat
 import com.dicoding.picodiploma.docplant.databinding.ActivityCustomCameraBinding
 import com.dicoding.picodiploma.docplant.ui.camera.CameraActivity
 import com.dicoding.picodiploma.docplant.utils.createFile
+import com.dicoding.picodiploma.docplant.utils.rotateFile
 import java.lang.Exception
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
@@ -23,6 +25,7 @@ import java.util.concurrent.Executors
 class CustomCameraActivity : AppCompatActivity() {
     private lateinit var binding: ActivityCustomCameraBinding
     private lateinit var cameraExecutor: ExecutorService
+    private lateinit var currentPhotoPath: String
 
     private var cameraSelector: CameraSelector = CameraSelector.DEFAULT_BACK_CAMERA
     private var imageCapture: ImageCapture? = null
@@ -59,7 +62,10 @@ class CustomCameraActivity : AppCompatActivity() {
 
         val photoFile = createFile(application)
 
-        val outputOptions = ImageCapture.OutputFileOptions.Builder(photoFile).build()
+        val rotate = rotateFile(BitmapFactory.decodeFile(photoFile.path), photoFile.path)
+
+        val outputOptions = ImageCapture.OutputFileOptions.Builder(rotate).build()
+
         imageCapture.takePicture(
             outputOptions,
             ContextCompat.getMainExecutor(this),
@@ -74,7 +80,7 @@ class CustomCameraActivity : AppCompatActivity() {
 
                 override fun onImageSaved(output: ImageCapture.OutputFileResults) {
                     val intent = Intent()
-                    intent.putExtra("picture", photoFile)
+                    intent.putExtra("picture", rotate)
                     intent.putExtra(
                         "isBackCamera",
                         cameraSelector == CameraSelector.DEFAULT_BACK_CAMERA

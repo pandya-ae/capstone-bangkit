@@ -7,6 +7,8 @@ import android.graphics.Bitmap
 import android.graphics.Matrix
 import android.net.Uri
 import android.os.Environment
+import androidx.exifinterface.media.ExifInterface
+import com.bumptech.glide.load.resource.bitmap.TransformationUtils
 import com.dicoding.picodiploma.docplant.R
 import java.io.*
 import java.text.SimpleDateFormat
@@ -18,6 +20,11 @@ val timeStamp: String = SimpleDateFormat(
     FILENAME_FORMAT,
     Locale.US
 ).format(System.currentTimeMillis())
+
+fun createTempFile(context: Context): File {
+    val storageDir: File? = context.getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+    return File.createTempFile(timeStamp, ".jpg", storageDir)
+}
 
 fun createCustomTempFile(context: Context): File {
     val storageDir: File? = context.getExternalFilesDir(Environment.DIRECTORY_PICTURES)
@@ -52,7 +59,7 @@ fun uriToFile(selectedImg: Uri, context: Context): File {
     return myFile
 }
 
-fun rotateBitmap(bitmap: Bitmap, isBackCamera: Boolean = false): Bitmap {
+fun rotateBitmap(bitmap: Bitmap, isBackCamera: Boolean = true): Bitmap {
     val matrix = Matrix()
     return if (isBackCamera) {
         matrix.postRotate(90f)
@@ -78,4 +85,31 @@ fun rotateBitmap(bitmap: Bitmap, isBackCamera: Boolean = false): Bitmap {
             true
         )
     }
+}
+
+fun rotateFile(bitmap: Bitmap, currentPhotoPath: String): File {
+    val file = File(currentPhotoPath)
+    val exif = ExifInterface(currentPhotoPath)
+    val os: OutputStream
+    val orientation: Int = exif.getAttributeInt(
+        ExifInterface.TAG_ORIENTATION,
+        ExifInterface.ORIENTATION_UNDEFINED
+    )
+
+    val rotatedBitmap: Bitmap = when (orientation) {
+        ExifInterface.ORIENTATION_ROTATE_90 -> TransformationUtils.rotateImage(bitmap, 90)
+        ExifInterface.ORIENTATION_ROTATE_180 -> TransformationUtils.rotateImage(bitmap, 180)
+        ExifInterface.ORIENTATION_ROTATE_270 -> TransformationUtils.rotateImage(bitmap, 270)
+        ExifInterface.ORIENTATION_NORMAL -> bitmap
+        else -> bitmap
+    }
+    try {
+        os = FileOutputStream(file)
+        rotatedBitmap.compress(Bitmap.CompressFormat.JPEG, 100, os)
+        os.flush()
+        os.close()
+    } catch (e: Exception) {
+        e.printStackTrace()
+    }
+    return file
 }
