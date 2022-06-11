@@ -1,0 +1,230 @@
+﻿Tomato
+Tomato___Bacterial_spot
+Tomato Bacterial Spot
+Description: 
+This disease is caused by several species of the bacterium Xanthomonas (but primarily by Xanthomonas perforans), which infect green but not red tomatoes. Peppers are also infected. The disease is more prevalent during wet seasons. Damage to the plants includes leaf and fruit spots, which result in reduced yields, defoliation, and sunscalded fruit. The symptoms consist of numerous small, angular to irregular, water-soaked spots on the leaves and slightly raised to scabby spots on the fruits. The leaf spots may have a yellow halo. The centers dry out and frequently tear.
+Prevention & Treatment:
+Only use certified disease-free seeds and plants. Avoid areas that were planted with peppers or tomatoes during the previous year. Avoid overhead watering by using drip or furrow irrigation. Remove and dispose of all diseased plant material. Prune plants to promote air circulation. Spraying with a copper fungicide will give fairly good control of the bacterial disease.
+
+
+Tomato
+Tomato___Early_blight
+Tomato Early Blight
+Description:
+This disease is caused by the fungi Alternaria linariae (formally known as A. solani) and is first observed on the plants as small, brown lesions mostly on the older foliage. Spots enlarge and concentric rings in a bull’s-eye pattern may be seen in the center of the diseased area. The tissue surrounding the spots may turn yellow. If high temperature and humidity occur at this time, much of the foliage is killed. Lesions on the stems are similar to those on leaves and sometimes girdle the plant if they occur near the soil line (collar rot). On the fruits, lesions attain considerable size, usually involving nearly the entire fruit. Concentric rings are also present on the fruit. Infected fruit frequently drops.
+Prevention & Treatment:
+Use resistant or tolerant tomato cultivars. Use pathogen-free seed and do not set diseased plants in the field. Use crop rotation, eradicate weeds and volunteer tomato plants, space plants to not touch, mulch plants, fertilize properly, don’t wet tomato foliage with irrigation water, and keep the plants growing vigorously. Trim off and dispose of infected lower branches and leaves.
+
+
+Tomato
+Tomato___Late_blight
+Tomato Late Blight
+Description:
+Late blight is a potentially serious disease of potato and tomato and is caused by the water mold pathogen Phytophthora infestans. Late blight is especially damaging during cool, wet weather. This pathogen can affect all plant parts. Young leaf lesions are small and appear as dark, water-soaked spots. These leaf spots will quickly enlarge, and a white mold will appear at the margins of the affected area on the lower surface of leaves. Complete defoliation (browning and shriveling of leaves and stems) can occur within 14 days from the first symptoms. Infected tomato fruits develop shiny, dark, or olive-colored lesions, which may cover large areas. Fungal spores are spread between plants and gardens by rain and wind. A combination of daytime temperatures in the upper 70s °F with high humidity is ideal for infection.
+Prevention & Treatment:
+Keep foliage dry. Locate your garden where it will receive morning sun. Allow extra room between the plants, and avoid overhead watering, especially late in the day. Purchase certified disease-free seeds and plants. Destroy volunteer tomato and potato plants, as well as nightshade family weeds, such as Carolina horsenettle or black nightshade, which may harbor the fungus. Do not compost rotten, store-bought potatoes. Pull out and destroy diseased plants. If the disease is severe enough to warrant chemical control, select one of the following fungicides: chlorothalonil (very good), copper fungicide, or mancozeb (good).
+
+
+Tomato
+Tomato___Leaf_Mold
+Tomato Leaf Mold
+Description:
+The fungus Passalora fulva causes leaf mold. It is first observed on older leaves near the soil where air movement is poor and humidity is high. The initial symptoms are pale green or yellowish spots on the upper leaf surface, which enlarge and turn a distinctive yellow. Under humid conditions, the spots on the lower leaf surfaces become covered with a gray, velvety growth of the spores produced by the fungus. When infection is severe, the spots coalesce, and the foliage is killed. Occasionally, the fungus attacks stems, blossoms and fruits. Green and mature fruit can have a black, leathery rot on the stem end.
+Prevention & Treatment: 
+Crop residue should be removed from the field. Staking and pruning to increase air circulation helps to control the disease. Space tomato plants further apart for better air circulation between plants. Avoid wetting leaves when watering. Rotate with vegetables other than tomatoes. Using a preventative fungicide program with chlorothalonil, mancozeb, or copper fungicide, can control the disease.
+
+
+Tomato
+Tomato___Septoria_leaf_spot
+Tomato Septoria Leaf Spot
+Description:
+This destructive disease of tomato foliage, petioles, and stems (fruit is not infected) is caused by the fungus Septoria lycopersici. Infection usually occurs on the lower leaves near the ground, after plants begin to set fruit. Numerous small, circular spots with dark borders surrounding a beige-colored center appear on the older leaves. Tiny black specks, which are spore-producing bodies, can be seen in the center of the spots. Severely spotted leaves turn yellow, die, and fall off the plant. The fungus is most active when temperatures range from 68 to 77° F, the humidity is high, and rainfall or overhead irrigation wets the plants. Defoliation weakens the plant, reduces the size and quality of the fruit, and exposes the fruit to sunscald (see below). The fungus is not soil-borne but can overwinter on crop residue from previous crops, decaying vegetation, and on some weeds related to tomatoes.
+Prevention & Treatment: 
+Most currently grown tomato cultivars are susceptible to Septoria leaf spot. Crop rotation of 3 years and sanitation (removal of crop debris) will reduce the amount of inoculum. Do not use overhead irrigation. Repeated fungicide applications with chlorothalonil (very good) or copper fungicide, or mancozeb (good) will keep the disease in check. See Table 1 for examples of fungicide products for home garden use.
+
+
+Tomato
+Tomato___Spider_mites Two-spotted_spider_mite
+Tomato Spider Mite
+Description:
+Tomato red spider mite (Tetranychus evansi) is an invasive arachnid pest, thought to originate from South America. Arachnids are invertebrate pests similar to insects. The most noticeable difference is that arachnids have 8 legs and insects have 6. Tomato red spider mite feeds on a very wide range of host plants, but prefers to eat wild and cultivated solanaceous plants (capsicum, chili, potato, tomato, eggplant or aubergine, blackberry nightshade) as well as a range of other crops, ornamentals and weeds. These mites reproduce very rapidly and can kill host plants within 3–5 weeks if populations are high and are not managed.
+Prevention & Treatment:
+Plant your tomato plants where they stay warm without drying out. Ensure your tomato plants are growing in loamy soil with lots of organic matter. Place hot pepper or garlic in the soil to prevent spider mites. Apply diatomaceous earth to the soil around your tomato plants. Move your tomato plants indoors to protect them if you can.
+
+
+Tomato
+Tomato___Target_Spot
+Tomato Target Spot
+Description:
+Target spot of tomato is a fungal disease that attacks a diverse assortment of plants, including papaya, peppers, snap beans, potatoes, cantaloupe, and squash as well as passion flower and certain ornamentals. Target spot on tomato fruit is difficult to control because the spores, which survive on plant refuse in the soil, are carried over from season to season.
+Prevention & Treatment:
+Remove old plant debris at the end of the growing season; otherwise, the spores will travel from debris to newly planted tomatoes in the following growing season, thus beginning the disease anew. Dispose of the debris properly and don’t place it on your compost pile unless you’re sure your compost gets hot enough to kill the spores. Rotate crops and don’t plant tomatoes in areas where other disease-prone plants have been located in the past year– primarily eggplant, peppers, potatoes or, of course– tomatoes. Rutgers University Extension recommends a three year rotation cycle to reduce soil-borne fungi. 
+
+
+Tomato
+Tomato___Tomato_mosaic_virus
+Tomato Mosaic Virus
+Description:
+Tomato mosaic virus is a serious and extremely contagious disease. It is also hard to identify, with symptoms varying wildly depending upon the variety and age of the infected plant, the strain of the virus, and environmental conditions. To make matters worse, it is very hard to distinguish from the closely related tobacco mosaic virus. Tomato mosaic virus symptoms can be found at any stage of growth and all parts of the plant may be infected. They are often seen as a general mottling or mosaic appearance on foliage. When the plant is severely affected, leaves may look akin to ferns with raised dark green regions. Leaves may also become stunted.
+Prevention & Treatment:
+Treating mosaic virus is difficult and there are no chemical controls like there are for fungal diseases, although some varieties of tomato are resistant to the disease, and seeds can be bought that are certified disease free. Sanitation is the most important application to practice when controlling tobacco mosaic virus. Tools should be boiled for 5 minutes and then washed with a strong detergent. Bleaching doesn’t work for viral decontamination. Destroy any seedlings that appear stunted or distorted and then decontaminate tools and hands. Keep the area around the tomatoes weeded and free of plant detritus to minimize areas the disease can harbor. Control insects as well to lessen the chances of contamination. If you spot the disease in your garden, you should immediately dig up and burn infected plants. Don’t plant tomatoes, cucumbers or other plants that are susceptible to mosaic virus in that same area again.
+
+
+Tomato
+Tomato___Tomato_Yellow_Leaf_Curl_Virus
+Tomato Yellow Leaf Curl
+Description:
+Tomato yellow leaf curl virus (TYLCV) is not seed-borne but is transmitted by whiteflies. This disease is extremely damaging to fruit yield in both tomato and pepper crops. Whiteflies may bring the disease into the garden from infected weeds nearby, such as various nightshades and jimsonweed. After infection, tomato plants may be symptomless for as long as 2 to 3 weeks. Symptoms in tomato plants are the upward curling of leaves, yellow (chlorotic) leaf margins, smaller leaves than normal, plant stunting, and flower drop. If tomato plants are infected early in their growth, there may be no fruit formed. Infected plants may appear randomly throughout the garden. Pepper plants may also become infected, but will show no symptoms.
+Prevention & Treatment: 
+Removal of plants with initial symptoms may slow the spread of the disease. Rogued (pulled out) infected plants should be immediately bagged to prevent the spread of the whiteflies feeding on those plants. Keep weeds controlled within and around the garden site, as these may be alternate hosts for whiteflies. Reflective mulches (aluminum or silver-colored) can be used in the rows to reduce whitefly feeding.
+
+
+Apple
+Apple___Apple_scab
+Apple Scab
+Description:
+One of the most common diseases, apple scab, is caused by the fungus Venturia inaequalis. The disease begins in spring as dark, olive-green leaf spots that are less than ½-inch in diameter. Severe infections can affect the entire leaf, causing it to turn brown and drop from the tree. Slightly raised, black spots deform the fruits.
+Prevention & Treatment: 
+Plant resistant varieties for best control. Rake and remove leaves to reduce early spring infection sources. If disease is severe enough to warrant chemical control, choose one of the following fungicides for use on apple trees: captan, mancozeb, thiophanate-methyl or sulfur. See Table 1 for examples of brands and specific fungicide products. Apply all chemicals according to directions on the label. Apple varieties resistant to apple scab are ‘Goldrush’, ‘Enterprise’, ‘Pristine’, ‘Gala Supreme’, ‘Liberty’, ‘Freedom’, and ‘Jonafree’.
+
+
+Apple
+Apple___Black_rot
+Apple Black Rot
+Description:
+The fungus, Physalospora obtusa (Botryosphaeria obtusa), causes black rot. Highly susceptible crabapple varieties may lose most of their leaves, which weakens the tree and reduces flowering the next year. The disease begins on the leaf as a purple speck that enlarges to have a brown or tan center, which looks like a frog’s eye. Heavily infected leaves drop from the tree. Limbs may have slightly sunken, reddish brown areas called cankers.
+Prevention & Treatment: 
+Remove and discard dead branches and diseased fruit, called mummies, where the fungus overwinters. The fungicides captan and thiophanate-methyl are effective if applied early and at regular intervals throughout the season. See Table 1 for examples of brands and specific fungicide products.
+
+
+Apple
+Apple___Cedar_apple_rust
+Apple Cedar-Apple Rust
+Description:
+This fungus disease of apple and crabapple is caused by Gymnosporangium species and requires another host plant, Eastern red cedar (Juniperus virginiana) or other ornamental junipers to complete its life cycle. The disease spreads from the cedar to the apple and then back to the cedar. It can be a severe problem wherever these two are grown together, and most ornamental crabapples and apples are susceptible.
+Prevention & Treatment: 
+Plant resistant varieties. If possible, remove Eastern red cedars from the area or prune out galls on nearby cedars. If disease is severe enough to warrant chemical control, select from the chemicals below. For apples select one of the following: mancozeb (do not apply after bloom), myclobutanil or sulfur. The fungicide for use on crabapple trees is mancozeb (do not spray after bloom) or myclobutanil. See Table 1 for examples of brands and specific fungicide products. Apply all chemicals according to directions on the label.
+
+
+Corn
+Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot
+Corn Gray Leaf Spot
+Description:
+Gray leaf spot is the number one disease in all corn production. The fungus survives the winter on residue from the prior corn crop, providing a primary source of the inoculum, particularly when growers plant continuous corn or use a no-till soybean/corn rotation. Spores from the fungus are splashed onto the lower leaves early in the season. When these resulting infections produce spores, the inoculum can be carried by air currents higher into the canopy or into neighboring fields. Mature lesions from gray leaf spots are rectangular, as they are restricted by the leaf veins.
+Prevention & Treatment:
+Disease management tactics include using resistant corn hybrids, conventional tillage where appropriate, and crop rotation. Foliar fungicides can be effective if economically warranted. Typically they are only profitable on susceptible inbreds or susceptible hybrids under a combination of high risk conditions with high yield potential, prolonged humid conditions, and evidence of disease development.
+
+
+Corn
+Corn_(maize)___Common_rust_
+Corn Common Rust
+Description: 
+Rust occurs in most home gardens on corn but is seldom a serious problem. It is caused by various species of the fungus Puccinia and causes raised, brick red spots primarily on upper leaf surfaces. Plant corn early and avoid letting plants get under stress from drought. Rust develops best when temperatures are cool (60 to 70 ºF) and humid.
+Prevention & Treatment: 
+Control of these problems is obtained by using high-quality seed that has been treated with protective fungicides. Seeds will be pink to indicate they have been treated. Sweet corn should be planted on raised bed rows after the soil temperature is above 55 ºF.
+
+
+Corn
+Corn_(maize)___Northern_Leaf_Blight
+Corn Northern Leaf Blight
+Description:
+Similar to gray leaf spot, the fungal inoculum causing northern corn leaf blight survives in the residue in the soil and moves up through the canopy. This disease differs from gray leaf spot, however, in that it prefers cooler conditions, tending to strike the corn crop later in the season. Northern corn leaf blight is easily identified by the 1- to 6-inch cigar-shaped lesions on lower leaves, which may be grayish-green to tan in color.
+Prevention & Treatment:
+Control of this disease is often focused on management and prevention. First, choose corn varieties or hybrids that are resistant or at least have moderate resistance to northern corn leaf blight. When you grow corn, make sure it does not stay wet for long periods of time. The fungus that causes this infection needs between six and 18 hours of leaf wetness to develop. Plant corn with enough space for airflow and water in the morning so leaves can dry throughout the day.
+
+
+Peach
+Peach___Bacterial_spot
+Peach Bacterial Spot
+Description:
+This disease is caused by the bacterium Xanthomonas arboricola pv. pruni, and affects peach fruit and leaves. Infected leaves develop small reddish-purple spots that often have a white center. In advanced cases, the inner portion of the spot often falls out, giving the leaf a “ragged” or “shot-hole” appearance. Infected leaves turn yellow and drop from the tree. Lesions on fruits appear as small dark spots, which become larger and crater-like as the fruit grows. These lesions are generally shallow but can be ¼-inch deep. They do not develop the velvety spots of scab. Peeling the fruit will remove most traces of the disease.
+Prevention & Treatment: 
+This disease is difficult to control, and chemical sprays are not practical for the home gardener. Varieties are available that are moderately resistant but not immune. These varieties are ‘Ambergem’, ‘Belle of Georgia’, ‘Cardinal’, ‘Cherryred’, ‘Dixired’, ‘Candor,’ ‘Challenger’, ‘Carolina Gold’, ‘Norman,’ ‘Loring,’ ‘Bisco’, ‘Southhaven’, and ‘Red Haven’ in a yellow peach, and ‘Southern Pearl’, ‘White County’, and ‘White River’ in a white peach. Bacterial spot is usually more severe on poorly nourished trees or where nematodes are a problem, so proper cultural care is important.
+
+
+Potato
+Potato___Early_blight
+Potato Early Blight
+Description:
+This disease is caused by the fungus Alternaria solani, and is first observed on the plants as small, black lesions, mostly on the older foliage. Spots enlarge and concentric rings in a bull’s eye pattern can be seen in the center of the diseased area. The tissue surrounding the spots may turn yellow. If high temperature and humidity occur at this time, much of the foliage is killed and falls off. Tubers may be infected with brown, corky, dry spots. The fungal spores spend the winter in plant debris left in the garden and on other solanaceous hosts, such as tomato, eggplant, and black nightshade. Tubers are frequently infected through wounds inflicted during harvest. Allow tubers to mature fully before digging. Infected tubers are inedible.
+Prevention & Treatment: 
+Use crop rotation, eradicate weeds and volunteer potato and tomato plants, fertilize and lime based on soil test results, and keep the plants growing vigorously. Remove and dispose of diseased plants immediately after harvest. Use disease-free seed potatoes. The varieties Kennebec, Rosa, and Sebago are resistant to early blight. For fungicide application, use mancozeb, chlorothalonil, or copper fungicide. Wait 14 days after spraying mancozeb before harvest and 7 days after spraying chlorothalonil. Chlorothalonil gives good control of early blight, and mancozeb or copper fungicide gives good to fair control. Chlorothalonil has a 0 day pre-harvest interval, and mancozeb has a 5 day pre-harvest interval. See Table 1 for examples of products.
+
+
+Potato
+Potato___Late_blight
+Potato Late Blight
+Description: 
+This is a potentially serious disease of potato and tomato, caused by the water mold Phytophthora infestans. Late blight is especially damaging during cool, wet weather. The pathogen can affect all plant parts. Young lesions are small and appear as dark, water-soaked spots. These leaf spots will quickly enlarge, and a white mold will appear at the margins of the affected area on the lower surface of the leaves. Complete defoliation (browning and shriveling of leaves and stems) can occur within 14 days or less from the first symptoms. Infected potato tubers have a dry, corky rot that may be brown or reddish. Tubers are symptomless at the initial stages of infection but often develop symptoms in storage. The fungus produces a foul odor when the infection is severe.
+Prevention & Treatment:
+Keep foliage dry. Locate your garden where it will receive morning sun. Allow extra space between the plants and avoid overhead watering, especially late in the day. Purchase “certified disease-free seed potatoes.” Use resistant varieties. The Irish potato variety Kennebec is resistant to late blight. Other varieties include Elba, Sebago, Rosa, and Allegany. Destroy volunteer potato and tomato plants, which may harbor the fungus. Do not compost rotten, store-bought potatoes. Rotate with crops other than tomatoes. Remove diseased plants and tubers of all sizes from the soil and garden area.
+
+
+Cherry
+Cherry_(including_sour)___Powdery_mildew
+Cherry Powdery Mildew
+Description:
+Powdery mildew of sweet and sour cherry is caused by Podosphaera clandestina, an obligate biotrophic fungus. Mid- and late-season sweet cherry (Prunus avium) cultivars are commonly affected, rendering them unmarketable due to the covering of white fungal growth on the cherry surface. Season long disease control of both leaves and fruit is critical to minimize overall disease pressure in the orchard and consequently to protect developing fruit from accumulating spores on their surfaces.
+
+
+Grape
+Grape___Black_rot
+Grape Black Rot
+Description:
+Brown lesions on the leaves that develop black dots (pycnidia); grapes have light spots that eventually form pycnidia; grapes harden and turn black, while still remaining on the vine
+Prevention & Treatment:
+Remove all mummified fruit from vines during dormant pruning; cultivate soil during bud break to bury mummies and reduce inoculant; application of appropriate fungicides can help control the disease
+
+
+Grape
+Grape___Esca_(Black_Measles)
+Grape Esca
+Description:
+Symptoms appear on leaves, trunk, canes and berries. On leaves we will see interventional striping that looks like tiger stripes. White cultivars show chlorotic and necrotic strips whereas red cultivars show red areas and necrotic strips. On berries we will see superficial spots and later may coalesce making berries appear black. Trunk/arm/cordons shows dark brown black vascular streaking and oozes dark sap when we cut the trunk. Sometimes this measles is associated with numerous secondary wood rotting fungi which decorate the vineyard completely.
+Prevention & Treatment:
+Till date there is no effective method to control this disease. Remove the infected berries, leaves and trunk and destroy them. Protect the prune wounds to minimize fungal infection using wound sealant (5% boric acid in acrylic paint) or essential oil or suitable fungicides.
+
+
+Grape
+Grape___Leaf_blight_(Isariopsis_Leaf_Spot)
+Grape Leaf Blight
+Description:
+On the leaf surface we will see lesions which are irregularly shaped (2 to 25 mm in diameter). Initially lesions are dull red to brown in color and turn black later. If disease is severe these lesions may coalesce. On berries we can see symptoms similar to black rot but the entire cluster will collapse.
+Prevention & Treatment:
+Fungicides sprayed for other diseases in the season may help to reduce this disease.
+
+
+Orange
+Orange___Haunglongbing_(Citrus_greening)
+Citrus Greening Disease
+Description:
+Plants affected by citrus greening disease, also known as huanglongbing or yellow dragon disease, have acquired a serious bacterial infection. Citrus greening disease symptoms vary widely but include new leaves that emerge small with yellow mottling or blotching, yellow shoots, enlarged and corky leaf veins, as well as fruits that are small with green ends and filled with small, dark, aborted seeds and bitter juice.
+Prevention & Treatment:
+There is no cure for citrus greening, which explains why spotting citrus greening disease symptoms early is so crucial– rapid removal of infected trees is the only way to stop the spread of the bacteria responsible. Since infected trees will never again produce useful fruits, they only serve as a reservoir for this economically dangerous disease.
+
+
+Bell Pepper
+Pepper,_bell___Bacterial_spot
+Bell Pepper Bacterial Spot
+Description:
+Bacterial leaf spot, caused by Xanthomonas campestris pv. vesicatoria, is the most common and destructive disease for peppers in the eastern United States. It is a gram-negative, rod-shaped bacterium that can survive in seeds and plant debris from one season to another. Different strains or races of the bacterium are cultivar-specific, causing disease symptoms in certain varieties due to stringent host specificity. Bacterial leaf spot can devastate a pepper crop by early defoliation of infected leaves and disfiguring fruit. In severe cases, plants may die as it is extremely difficult to find a cure once the disease takes hold. However, there are several options for growers to prevent it from occurring and spreading.
+Prevention & Treatment:
+The primary management strategy of bacterial spot begins with use of certified pathogen-free seed and disease-free transplants. The bacteria do not survive well once host material has decayed, so crop rotation is recommended. Once the bacteria are introduced into a field or greenhouse, the disease is very difficult to control.
+
+
+Squash
+Squash___Powdery_mildew
+Squash Powdery Mildew
+Description:
+Powdery mildew infections are caused by several different species of fungus. Each species has its own preferred host plants. The species of powdery mildew that affects squash foliage (Erysiphe cichoracearum) is different from those that target peas (Erysiphe pisi) or eggplants (Leveillula taurica). Interestingly, this fungus lives on the outside of the leaves and does not penetrate the interior tissue. It can only grow on the surface of the leaf.
+Prevention & Treatment:
+Along with the perfect storm of weather conditions, we no doubt aid and abet the disease. As mentioned above, the disease overwinters. Practicing crop rotation will go a long way in preventing the spread of powdery mildew. Do not plant cucurbits in the same area for at least two years. Additional management techniques for treating powdery mildew in squash are to destroy any diseased plant debris, space plantings since a densely planted plot are more likely to be infected, and plant resistant varieties when possible. Also, keep the garden free of weeds. Powdery mildew control may also need to be combined with a timely application of a fungicide.
+
+
+Strawberry
+Strawberry___Leaf_scorch
+Strawberry Leaf Scorch
+Description:
+Scorched strawberry leaves are caused by a fungal infection which affects the foliage of strawberry plantings. The fungus responsible is called Diplocarpon earliana. Strawberries with leaf scorch may first show signs of issue with the development of small purplish blemishes that occur on the topside of leaves.
+Prevention & Treatment:
+While leaf scorch on strawberry plants can be frustrating, there are some strategies which home gardeners may employ to help prevent its spread in the garden. The primary means of strawberry leaf scorch control should always be prevention. Since this fungal pathogen overwinters on the fallen leaves of infected plants, proper garden sanitation is key. This includes the removal of infected garden debris from the strawberry patch, as well as the frequent establishment of new strawberry transplants. The creation of new plantings and strawberry patches is key to maintaining a consistent strawberry harvest, as older plants are more likely to show signs of severe infection.
