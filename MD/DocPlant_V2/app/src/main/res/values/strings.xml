@@ -58,4 +58,7 @@
     <string name="banana_diseases">Banana diseases</string>
     <string name="tomato_diseases">Tomato diseases</string>
     <string name="information">Information</string>
+
+    <string name="Corn">Gray leaf spot is the number one disease in all corn production. The fungus survives the winter on residue from the prior corn crop, providing a primary source of the inoculum, particularly when growers plant continuous corn or use a no-till soybean/corn rotation. Spores from the fungus are splashed onto the lower leaves early in the season. When these resulting infections produce spores, the inoculum can be carried by air currents higher into the canopy or into neighboring fields. Mature lesions from gray leaf spots are rectangular, as they are restricted by the leaf veins.</string>
+    <string name="scan_the_plant">Scan the plant</string>
 </resources>

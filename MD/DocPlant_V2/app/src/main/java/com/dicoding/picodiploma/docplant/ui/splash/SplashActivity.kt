@@ -16,12 +16,12 @@ import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.dicoding.picodiploma.docplant.ui.main.MainActivity
-import com.dicoding.picodiploma.docplant.ui.main.MainActivity.Companion.EXTRA_TOKEN
 import com.dicoding.picodiploma.docplant.R
 import com.dicoding.picodiploma.docplant.data.datastore.DataStoreModel
 import com.dicoding.picodiploma.docplant.data.datastore.UserPreference
 import com.dicoding.picodiploma.docplant.helper.ViewModelFactory
 import com.dicoding.picodiploma.docplant.ui.auth.login.LoginActivity
+import com.dicoding.picodiploma.docplant.ui.main.MainActivity.Companion.EXTRA_LAST_PICT
 import kotlinx.coroutines.launch
 
 @SuppressLint("CustomSplashScreen")
@@ -53,7 +53,7 @@ class SplashActivity : AppCompatActivity() {
                     if (user.isLogin) {
                         // User is Login, go to MainActivity
                         Intent(this@SplashActivity, MainActivity::class.java).also { intent ->
-                            intent.putExtra(EXTRA_TOKEN, user.token)
+                            intent.putExtra(EXTRA_LAST_PICT, user.last_picture)
                             startActivity(intent)
                             finish()
                         }

@@ -32,7 +32,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="40dp"
-                    android:text="Scan the plant"
+                    android:text="@string/scan_the_plant"
                     android:textColor="@color/white"
                     android:textSize="32sp"
                     android:textStyle="bold"
@@ -76,8 +76,8 @@
 
                 <com.google.android.material.imageview.ShapeableImageView
                     android:id="@+id/preview_Image_View"
-                    android:layout_width="400dp"
-                    android:layout_height="400dp"
+                    android:layout_width="370dp"
+                    android:layout_height="370dp"
                     android:contentDescription="@string/upload_pict"
                     android:scaleType="centerCrop"
                     android:src="@drawable/upload"
