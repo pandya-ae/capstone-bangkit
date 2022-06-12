@@ -2,14 +2,12 @@ package com.dicoding.picodiploma.docplant.ui.result
 
 import android.content.Context
 import android.graphics.BitmapFactory
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
-import com.dicoding.picodiploma.docplant.data.BitmapModel
 import com.dicoding.picodiploma.docplant.data.datastore.DataStoreModel
 import com.dicoding.picodiploma.docplant.data.datastore.UserPreference
 import com.dicoding.picodiploma.docplant.databinding.ActivityResultBinding
@@ -33,22 +31,20 @@ class ResultActivity : AppCompatActivity() {
     }
 
     private fun setupViewMode() {
-        dataStoreModel = ViewModelProvider(this, ViewModelFactory(UserPreference.getInstance(dataStore)))[DataStoreModel::class.java]
+        dataStoreModel = ViewModelProvider(
+            this,
+            ViewModelFactory(UserPreference.getInstance(dataStore))
+        )[DataStoreModel::class.java]
     }
 
     private fun setupAction() {
         dataStoreModel.getUser().observe(this) { user ->
-            if (user.last_picture != "-"){
+            if (user.last_picture != "-") {
                 binding.previewImageView.setImageBitmap(BitmapFactory.decodeFile(user.last_picture))
                 binding.diseases.text = user.disease_name
             } else {
                 binding.diseases.text = user.disease_name
-                binding.descriptionDesease.text = "-"
-                binding.solutionDesease.text = "-"
             }
         }
-    }
-    companion object {
-        const val EXTRA_RESULT = "extra_result"
     }
 }

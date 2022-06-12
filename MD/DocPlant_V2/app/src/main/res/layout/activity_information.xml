@@ -91,15 +91,82 @@
                 app:layout_constraintTop_toTopOf="@+id/iv_tomato" />
 
             <TextView
-                android:id="@+id/description_tomato"
+                android:id="@+id/description_tomato1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/example_diseases_list"
+                android:layout_marginStart="8dp"
+                android:text="@string/tomato_bacterial_spot"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/tv_tomato"
                 app:layout_constraintTop_toBottomOf="@+id/tv_tomato" />
+
+            <TextView
+                android:id="@+id/description_tomato2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/tomato_early_blight"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/description_tomato1"
+                app:layout_constraintTop_toBottomOf="@+id/description_tomato1" />
+
+            <TextView
+                android:id="@+id/description_tomato3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/tomato_leaf_mold"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/description_tomato2"
+                app:layout_constraintTop_toBottomOf="@+id/description_tomato2" />
+
+            <TextView
+                android:id="@+id/description_tomato4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/tomato_septoria_leaf_spot"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/description_tomato3"
+                app:layout_constraintTop_toBottomOf="@+id/description_tomato3" />
+
+            <TextView
+                android:id="@+id/description_tomato5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/tomato_target_spot"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/description_tomato4"
+                app:layout_constraintTop_toBottomOf="@+id/description_tomato4" />
+
+            <TextView
+                android:id="@+id/description_tomato6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/tomato_mosaic_virus"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/description_tomato5"
+                app:layout_constraintTop_toBottomOf="@+id/description_tomato5" />
+
+            <TextView
+                android:id="@+id/description_tomato7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/tomato_yellow_leaf_curl"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/description_tomato6"
+                app:layout_constraintTop_toBottomOf="@+id/description_tomato6" />
 
             <ImageView
                 android:id="@+id/iv_banana"
@@ -108,16 +175,16 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="16dp"
                 android:contentDescription="@string/logo"
-                android:src="@drawable/logo_banana"
+                android:src="@drawable/logo_corn"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/description_tomato" />
+                app:layout_constraintTop_toBottomOf="@+id/description_tomato7" />
 
             <TextView
                 android:id="@+id/tv_banana"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:text="@string/banana_diseases"
+                android:text="@string/corn_diseases"
                 android:textColor="@color/black"
                 android:textSize="28sp"
                 android:textStyle="bold"
@@ -126,16 +193,39 @@
                 app:layout_constraintTop_toTopOf="@+id/iv_banana" />
 
             <TextView
-                android:id="@+id/description_banana"
+                android:id="@+id/description_banana1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/example_diseases_list"
+                android:layout_marginStart="8dp"
+                android:text="@string/corn_gray_leaf_spot"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/tv_banana"
                 app:layout_constraintTop_toBottomOf="@+id/tv_banana" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/description_banana2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/corn_common_rust"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/description_banana1"
+                app:layout_constraintTop_toBottomOf="@+id/description_banana1" />
+
+            <TextView
+                android:id="@+id/description_banana3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/corn_northern_leaf_blight"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/description_banana2"
+                app:layout_constraintTop_toBottomOf="@+id/description_banana2" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

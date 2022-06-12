@@ -2,10 +2,10 @@ package com.dicoding.picodiploma.docplant.ui.setting
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
@@ -46,7 +46,10 @@ class SettingActivity : AppCompatActivity() {
     }
 
     private fun setupViewModel() {
-        dataStoreModel = ViewModelProvider(this, ViewModelFactory(UserPreference.getInstance(dataStore)))[DataStoreModel::class.java]
+        dataStoreModel = ViewModelProvider(
+            this,
+            ViewModelFactory(UserPreference.getInstance(dataStore))
+        )[DataStoreModel::class.java]
     }
 
     private fun showLogoutDialog() {
@@ -63,7 +66,8 @@ class SettingActivity : AppCompatActivity() {
                     startActivity(intent)
                     this.finish()
                 }
-                Toast.makeText(this, getString(R.string.logout_message_success), Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.logout_message_success), Toast.LENGTH_SHORT)
+                    .show()
             }.show()
     }
 }

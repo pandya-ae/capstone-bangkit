@@ -20,18 +20,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DocPlant">
         <activity
-            android:name=".ui.information.InformationActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.result.ResultActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.setting.SettingActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.camera.cameraX.CustomCameraActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.splash.SplashActivity"
             android:exported="true"
             android:launchMode="singleTask">
@@ -41,6 +29,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.information.InformationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.result.ResultActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.setting.SettingActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.auth.register.RegisterActivity"
             android:exported="true" />

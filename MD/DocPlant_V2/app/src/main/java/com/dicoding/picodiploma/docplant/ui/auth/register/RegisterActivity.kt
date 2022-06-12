@@ -2,7 +2,6 @@ package com.dicoding.picodiploma.docplant.ui.auth.register
 
 import android.content.Intent
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -10,6 +9,7 @@ import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.dicoding.picodiploma.docplant.R
@@ -73,13 +73,21 @@ class RegisterActivity : AppCompatActivity() {
                 registerJob = launch {
                     registerViewModel.userRegister(name, email, password).collect { res ->
                         res.onSuccess {
-                            Toast.makeText(this@RegisterActivity, getString(R.string.register_success), Toast.LENGTH_SHORT).show()
+                            Toast.makeText(
+                                this@RegisterActivity,
+                                getString(R.string.register_success),
+                                Toast.LENGTH_SHORT
+                            ).show()
                             showLoading(false)
                             startActivity(Intent(this@RegisterActivity, LoginActivity::class.java))
                         }
 
                         res.onFailure {
-                            Toast.makeText(this@RegisterActivity, it.message.toString(), Toast.LENGTH_SHORT).show()
+                            Toast.makeText(
+                                this@RegisterActivity,
+                                it.message.toString(),
+                                Toast.LENGTH_SHORT
+                            ).show()
                             showLoading(false)
                         }
                     }
@@ -88,13 +96,15 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    private fun form(){
+    private fun form() {
         binding.etName.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
             }
+
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
                 setMyButtonEnable()
             }
+
             override fun afterTextChanged(s: Editable) {
             }
         })
@@ -102,9 +112,11 @@ class RegisterActivity : AppCompatActivity() {
         binding.etEmail.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
             }
+
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
                 setMyButtonEnable()
             }
+
             override fun afterTextChanged(s: Editable) {
             }
         })
@@ -113,9 +125,11 @@ class RegisterActivity : AppCompatActivity() {
 
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
             }
+
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
                 setMyButtonEnable()
             }
+
             override fun afterTextChanged(s: Editable) {
             }
         })
@@ -125,11 +139,12 @@ class RegisterActivity : AppCompatActivity() {
         val name = binding.etName.text.toString()
         val email = binding.etEmail.text.toString()
         val password = binding.etPassword.text.toString()
-        binding.btnRegister.isEnabled = name.isNotEmpty() && password.isNotEmpty() && email.isNotEmpty()
+        binding.btnRegister.isEnabled =
+            name.isNotEmpty() && password.isNotEmpty() && email.isNotEmpty()
     }
 
-    private fun showLoading(state: Boolean){
-        if (state){
+    private fun showLoading(state: Boolean) {
+        if (state) {
             binding.progressBar.visibility = View.VISIBLE
         } else {
             binding.progressBar.visibility = View.GONE

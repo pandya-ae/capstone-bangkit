@@ -51,14 +51,25 @@
     <string name="diseases_title">Diseases:</string>
     <string name="example_diseases">Example diseases</string>
     <string name="description_title">Description:</string>
-    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse felis ipsum, egestas eu nisi eu, pretium aliquet turpis. Pellentesque lacinia ipsum elit, at venenatis enim fermentum ut. Etiam varius consequat augue sit amet ultrices. Duis et metus eget risus tristique bibendum vitae sed nisl. Suspendisse ultricies blandit rutrum. Nam viverra urna eget mi porttitor, ac dictum augue facilisis. Nulla vitae nunc id nulla tincidunt malesuada sollicitudin eget lacus. Quisque sit amet congue velit, in aliquet ante. Donec volutpat eu mi malesuada fermentum. Vivamus id augue sapien. Fusce rutrum, diam vitae lacinia mollis, sem quam dictum arcu, eu fermentum quam diam sit amet ex. In sed placerat quam, et euismod neque. Ut at mattis sapien. Vivamus tincidunt molestie lobortis.</string>
     <string name="solution_title">Solution:</string>
-    <string name="diseases_can_we_scan">Diseases can we scan</string>
-    <string name="example_diseases_list">- Lorem ipsum dolor sit amet \n- Lorem ipsum dolor sit amet \n- Lorem ipsum dolor sit amet \n- Lorem ipsum dolor sit amet \n- Lorem ipsum dolor sit amet \n- Lorem ipsum dolor sit amet</string>
-    <string name="banana_diseases">Banana diseases</string>
+    <string name="diseases_can_we_scan">Diseases we can scan</string>
+    <string name="corn_diseases">Corn diseases</string>
     <string name="tomato_diseases">Tomato diseases</string>
     <string name="information">Information</string>
+    <string name="nopermission">Not getting permission</string>
 
     <string name="Corn">Gray leaf spot is the number one disease in all corn production. The fungus survives the winter on residue from the prior corn crop, providing a primary source of the inoculum, particularly when growers plant continuous corn or use a no-till soybean/corn rotation. Spores from the fungus are splashed onto the lower leaves early in the season. When these resulting infections produce spores, the inoculum can be carried by air currents higher into the canopy or into neighboring fields. Mature lesions from gray leaf spots are rectangular, as they are restricted by the leaf veins.</string>
     <string name="scan_the_plant">Scan the plant</string>
+    <string name="tomato_bacterial_spot">- Tomato Bacterial Spot</string>
+    <string name="tomato_early_blight">- Tomato Early Blight</string>
+    <string name="tomato_leaf_mold">- Tomato Leaf Mold</string>
+    <string name="tomato_septoria_leaf_spot">- Tomato Septoria Leaf Spot</string>
+    <string name="tomato_target_spot">- Tomato Target Spot</string>
+    <string name="tomato_mosaic_virus">- Tomato Mosaic Virus</string>
+    <string name="tomato_yellow_leaf_curl">- Tomato Yellow Leaf Curl</string>
+    <string name="corn_gray_leaf_spot">- Corn Gray Leaf Spot</string>
+    <string name="corn_common_rust">- Corn Common Rust</string>
+    <string name="corn_northern_leaf_blight">- Corn Northern Leaf Blight</string>
+    <string name="errpass">Password at least 6 character</string>
+    <string name="erremail">Invalid Email</string>
 </resources>
