@@ -12,8 +12,8 @@ import com.dicoding.picodiploma.docplant.data.datastore.DataStoreModel
 import com.dicoding.picodiploma.docplant.data.datastore.UserPreference
 import com.dicoding.picodiploma.docplant.databinding.ActivityMainBinding
 import com.dicoding.picodiploma.docplant.helper.ViewModelFactory
-import com.dicoding.picodiploma.docplant.ui.result.ResultActivity
 import com.dicoding.picodiploma.docplant.ui.camera.CameraActivity
+import com.dicoding.picodiploma.docplant.ui.result.ResultActivity
 import com.dicoding.picodiploma.docplant.ui.setting.SettingActivity
 
 class MainActivity : AppCompatActivity() {
@@ -34,7 +34,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupViewModel() {
-        dataStoreModel = ViewModelProvider(this, ViewModelFactory(UserPreference.getInstance(dataStore)))[DataStoreModel::class.java]
+        dataStoreModel = ViewModelProvider(
+            this,
+            ViewModelFactory(UserPreference.getInstance(dataStore))
+        )[DataStoreModel::class.java]
     }
 
     private fun setupAction() {
@@ -49,9 +52,5 @@ class MainActivity : AppCompatActivity() {
                 startActivity(Intent(this@MainActivity, SettingActivity::class.java))
             }
         }
-    }
-
-    companion object {
-        const val EXTRA_LAST_PICT = "extra_token"
     }
 }

@@ -10,7 +10,6 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -21,17 +20,16 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
+import com.dicoding.picodiploma.docplant.R
 import com.dicoding.picodiploma.docplant.data.UserModel
 import com.dicoding.picodiploma.docplant.data.datastore.DataStoreModel
 import com.dicoding.picodiploma.docplant.data.datastore.UserPreference
 import com.dicoding.picodiploma.docplant.databinding.ActivityCameraBinding
 import com.dicoding.picodiploma.docplant.helper.ViewModelFactory
 import com.dicoding.picodiploma.docplant.ml.ModelBaruFix
-import com.dicoding.picodiploma.docplant.ui.camera.cameraX.CustomCameraActivity
 import com.dicoding.picodiploma.docplant.ui.information.InformationActivity
 import com.dicoding.picodiploma.docplant.ui.result.ResultActivity
 import com.dicoding.picodiploma.docplant.utils.createCustomTempFile
-import com.dicoding.picodiploma.docplant.utils.rotateBitmap
 import com.dicoding.picodiploma.docplant.utils.rotateFile
 import com.dicoding.picodiploma.docplant.utils.uriToFile
 import org.tensorflow.lite.DataType
@@ -46,17 +44,8 @@ class CameraActivity : AppCompatActivity() {
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
     private lateinit var getFile: File
     private lateinit var currentPhotoPath: String
-    private lateinit var imageView: ImageView
     lateinit var bitmap: Bitmap
     var result = " "
-
-    companion object {
-        const val CAMERA_X_RESULT = 200
-
-        private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
-        private const val REQUEST_CODE_PERMISSIONS = 10
-        const val RESULT = " "
-    }
 
     override fun onRequestPermissionsResult(
         requestCode: Int,
@@ -68,13 +57,14 @@ class CameraActivity : AppCompatActivity() {
             if (!allPermissionsGranted()) {
                 Toast.makeText(
                     this,
-                    "Tidak mendapatkan permission.",
+                    getString(R.string.nopermission),
                     Toast.LENGTH_SHORT
                 ).show()
                 finish()
             }
         }
     }
+
     private fun allPermissionsGranted() = REQUIRED_PERMISSIONS.all {
         ContextCompat.checkSelfPermission(baseContext, it) == PackageManager.PERMISSION_GRANTED
     }
@@ -97,23 +87,21 @@ class CameraActivity : AppCompatActivity() {
     }
 
     private fun setupViewMode() {
-        dataStoreModel = ViewModelProvider(this, ViewModelFactory(UserPreference.getInstance(dataStore)))[DataStoreModel::class.java]
+        dataStoreModel = ViewModelProvider(
+            this,
+            ViewModelFactory(UserPreference.getInstance(dataStore))
+        )[DataStoreModel::class.java]
     }
 
     private fun setupAction() {
         binding.apply {
-            btnInformation.setOnClickListener{
+            btnInformation.setOnClickListener {
                 startActivity(Intent(this@CameraActivity, InformationActivity::class.java))
             }
             btnCamera.setOnClickListener { startTakePhoto() }
             btnGallery.setOnClickListener { startGallery() }
             btnUpload.setOnClickListener {
                 val filePath = getFile.path
-//                val diseaseResult = BitmapModel(
-//                    bitmap,
-//                    result,
-//                    filePath
-//                )
 
                 Log.e("file path", getFile.path)
                 dataStoreModel.getUser().observe(this@CameraActivity) { user ->
@@ -121,9 +109,6 @@ class CameraActivity : AppCompatActivity() {
 
                     dataStoreModel.saveUser(update)
                 }
-
-//                val moveWithObjectIntent = Intent(this@CameraActivity, ResultActivity::class.java)
-//                moveWithObjectIntent.putExtra(ResultActivity.EXTRA_RESULT, diseaseResult)
                 startActivity(Intent(this@CameraActivity, ResultActivity::class.java))
             }
         }
@@ -144,17 +129,18 @@ class CameraActivity : AppCompatActivity() {
         }
     }
 
-    private val launcherIntentCamera = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { res ->
-        if (res.resultCode == RESULT_OK) {
-            val myFile = File(currentPhotoPath)
-            val result = rotateFile(BitmapFactory.decodeFile(myFile.path), currentPhotoPath)
-            val bitmap = BitmapFactory.decodeFile(result.path)
-            getFile = result
+    private val launcherIntentCamera =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { res ->
+            if (res.resultCode == RESULT_OK) {
+                val myFile = File(currentPhotoPath)
+                val result = rotateFile(BitmapFactory.decodeFile(myFile.path), currentPhotoPath)
+                val bitmap = BitmapFactory.decodeFile(result.path)
+                getFile = result
 
-            DiseaseModel(bitmap)
-            binding.previewImageView.setImageBitmap(bitmap)
+                DiseaseModel(bitmap)
+                binding.previewImageView.setImageBitmap(bitmap)
+            }
         }
-    }
 
     private val launcherIntentGallery = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
@@ -165,17 +151,11 @@ class CameraActivity : AppCompatActivity() {
             val myFile = uriToFile(selectedImg, this@CameraActivity)
             getFile = myFile
 
-//            binding.previewImageView.setImageURI(selectedImg)
             bitmap =
                 BitmapFactory.decodeStream(contentResolver.openInputStream(selectedImg))
             binding.previewImageView.setImageBitmap(bitmap)
             DiseaseModel(bitmap)
         }
-    }
-
-    private fun startCameraX() {
-        val intent = Intent(this, CustomCameraActivity::class.java)
-        launcherIntentCameraX.launch(intent)
     }
 
     private fun startGallery() {
@@ -185,24 +165,6 @@ class CameraActivity : AppCompatActivity() {
 
         val chooser = Intent.createChooser(intent, "Choose a Picture")
         launcherIntentGallery.launch(chooser)
-    }
-
-    private val launcherIntentCameraX = registerForActivityResult(
-        ActivityResultContracts.StartActivityForResult()
-    ) {
-        if (it.resultCode == CAMERA_X_RESULT) {
-            val myFile = it.data?.getSerializableExtra("picture") as File
-            val isBackCamera = it.data?.getBooleanExtra("isBackCamera", true) as Boolean
-
-            val result = rotateBitmap(
-                BitmapFactory.decodeFile(myFile.path),
-                isBackCamera
-            )
-
-            binding.previewImageView.setImageBitmap(result)
-            bitmap = result
-            DiseaseModel(bitmap)
-        }
     }
 
     private fun DiseaseModel(bitmap: Bitmap) {
@@ -215,7 +177,8 @@ class CameraActivity : AppCompatActivity() {
         Log.e("Bitmap", bitmapscale.toString())
 
         // Creates inputs for reference.
-        val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 150, 150, 3), DataType.FLOAT32)
+        val inputFeature0 =
+            TensorBuffer.createFixedSize(intArrayOf(1, 150, 150, 3), DataType.FLOAT32)
         val tensorImage = TensorImage(DataType.FLOAT32)
         tensorImage.load(bitmapscale)
 
@@ -256,5 +219,10 @@ class CameraActivity : AppCompatActivity() {
             }
         }
         return ind
+    }
+
+    companion object {
+        private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
+        private const val REQUEST_CODE_PERMISSIONS = 10
     }
 }

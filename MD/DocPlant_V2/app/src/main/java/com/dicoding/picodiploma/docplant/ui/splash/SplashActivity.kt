@@ -4,24 +4,23 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.WindowInsets
 import android.view.WindowManager
+import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import com.dicoding.picodiploma.docplant.ui.main.MainActivity
 import com.dicoding.picodiploma.docplant.R
 import com.dicoding.picodiploma.docplant.data.datastore.DataStoreModel
 import com.dicoding.picodiploma.docplant.data.datastore.UserPreference
 import com.dicoding.picodiploma.docplant.helper.ViewModelFactory
 import com.dicoding.picodiploma.docplant.ui.auth.login.LoginActivity
-import com.dicoding.picodiploma.docplant.ui.main.MainActivity.Companion.EXTRA_LAST_PICT
+import com.dicoding.picodiploma.docplant.ui.main.MainActivity
 import kotlinx.coroutines.launch
 
 @SuppressLint("CustomSplashScreen")
@@ -45,7 +44,10 @@ class SplashActivity : AppCompatActivity() {
      * Decide which activity to display based on user isLogin?
      */
     private fun determineUserDirection() {
-        dataStoreModel = ViewModelProvider(this, ViewModelFactory(UserPreference.getInstance(dataStore)))[DataStoreModel::class.java]
+        dataStoreModel = ViewModelProvider(
+            this,
+            ViewModelFactory(UserPreference.getInstance(dataStore))
+        )[DataStoreModel::class.java]
 
         lifecycleScope.launchWhenCreated {
             launch {
@@ -53,13 +55,16 @@ class SplashActivity : AppCompatActivity() {
                     if (user.isLogin) {
                         // User is Login, go to MainActivity
                         Intent(this@SplashActivity, MainActivity::class.java).also { intent ->
-                            intent.putExtra(EXTRA_LAST_PICT, user.last_picture)
+                            intent.flags =
+                                Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                             startActivity(intent)
                             finish()
                         }
                     } else {
                         // User not login, go to LoginActivity
                         Intent(this@SplashActivity, LoginActivity::class.java).also { intent ->
+                            intent.flags =
+                                Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                             startActivity(intent)
                             finish()
                         }
@@ -68,6 +73,7 @@ class SplashActivity : AppCompatActivity() {
             }
         }
     }
+
     private fun setupView() {
         @Suppress("DEPRECATION")
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
