@@ -2,9 +2,7 @@ package com.dicoding.picodiploma.docplant.ui.auth.login
 
 import android.content.Context
 import android.content.Intent
-import android.graphics.drawable.Drawable
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -13,14 +11,12 @@ import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.Toast
-import androidx.core.content.ContextCompat
-import androidx.core.content.res.ResourcesCompat
+import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import com.dicoding.picodiploma.docplant.ui.main.MainActivity
 import com.dicoding.picodiploma.docplant.R
 import com.dicoding.picodiploma.docplant.data.UserModel
 import com.dicoding.picodiploma.docplant.data.datastore.DataStoreModel
@@ -28,6 +24,7 @@ import com.dicoding.picodiploma.docplant.data.datastore.UserPreference
 import com.dicoding.picodiploma.docplant.databinding.ActivityLoginBinding
 import com.dicoding.picodiploma.docplant.helper.ViewModelFactory
 import com.dicoding.picodiploma.docplant.ui.auth.register.RegisterActivity
+import com.dicoding.picodiploma.docplant.ui.main.MainActivity
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
@@ -63,7 +60,10 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun setupViewModel() {
-        dataStoreModel = ViewModelProvider(this, ViewModelFactory(UserPreference.getInstance(dataStore)))[DataStoreModel::class.java]
+        dataStoreModel = ViewModelProvider(
+            this,
+            ViewModelFactory(UserPreference.getInstance(dataStore))
+        )[DataStoreModel::class.java]
         loginViewModel = ViewModelProvider(this)[LoginViewModel::class.java]
     }
 
@@ -73,7 +73,7 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
-        binding.btnLogin.setOnClickListener{
+        binding.btnLogin.setOnClickListener {
             binding.etEmail.clearFocus()
             binding.etPassword.clearFocus()
             showLoading(true)
@@ -91,14 +91,23 @@ class LoginActivity : AppCompatActivity() {
                                 dataStoreModel.saveUser(user)
                                 showLoading(false)
                                 val intent = Intent(this@LoginActivity, MainActivity::class.java)
-                                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                                intent.flags =
+                                    Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
                                 startActivity(intent)
                             }
-                            Toast.makeText(this@LoginActivity,getString(R.string.login_success), Toast.LENGTH_SHORT).show()
+                            Toast.makeText(
+                                this@LoginActivity,
+                                getString(R.string.login_success),
+                                Toast.LENGTH_SHORT
+                            ).show()
                         }
 
                         res.onFailure {
-                            Toast.makeText(this@LoginActivity,getString(R.string.login_err), Toast.LENGTH_SHORT).show()
+                            Toast.makeText(
+                                this@LoginActivity,
+                                getString(R.string.login_err),
+                                Toast.LENGTH_SHORT
+                            ).show()
                             showLoading(false)
                         }
                     }
@@ -107,18 +116,20 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun form(){
+    private fun form() {
         binding.etEmail.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
             }
+
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-                if (s.toString().isNotEmpty() && Patterns.EMAIL_ADDRESS.matcher(s).matches()){
+                if (s.toString().isNotEmpty() && Patterns.EMAIL_ADDRESS.matcher(s).matches()) {
                     binding.etEmail.error = null
                     setMyButtonEnable()
                 } else {
-                    binding.etEmail.error = "Invalid Email"
+                    binding.etEmail.error = getString(R.string.erremail)
                 }
             }
+
             override fun afterTextChanged(s: Editable) {
             }
         })
@@ -127,21 +138,23 @@ class LoginActivity : AppCompatActivity() {
 
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
             }
+
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-                if (s.toString().isNotEmpty() && s.toString().length >= 6){
+                if (s.toString().isNotEmpty() && s.toString().length >= 6) {
                     binding.etPassword.error = null
                     setMyButtonEnable()
                 } else {
-                    binding.etPassword.error = "Password at least 6 character"
+                    binding.etPassword.error = getString(R.string.errpass)
                 }
             }
+
             override fun afterTextChanged(s: Editable) {
             }
         })
     }
 
-    private fun showLoading(state: Boolean){
-        if (state){
+    private fun showLoading(state: Boolean) {
+        if (state) {
             binding.progressBar.visibility = View.VISIBLE
         } else {
             binding.progressBar.visibility = View.GONE

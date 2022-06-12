@@ -14,10 +14,10 @@ class UserPreference private constructor(private val dataStore: DataStore<Prefer
     fun getUser(): Flow<UserModel> {
         return dataStore.data.map { preferences ->
             UserModel(
-                preferences[NAME_KEY] ?:"",
-                preferences[EMAIL_KEY] ?:"",
-                preferences[LAST_PICT] ?:"",
-                preferences[DISEASE_KEY] ?:"",
+                preferences[NAME_KEY] ?: "",
+                preferences[EMAIL_KEY] ?: "",
+                preferences[LAST_PICT] ?: "",
+                preferences[DISEASE_KEY] ?: "",
                 preferences[STATE_KEY] ?: false
             )
         }

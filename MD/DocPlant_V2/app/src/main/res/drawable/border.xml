@@ -8,6 +8,5 @@
         android:bottomLeftRadius="40sp"
         android:topRightRadius="40sp"
         android:bottomRightRadius="40sp" />
-    <solid
-        android:color="#EEEEF1" />
+    <solid android:color="#EEEEF1" />
 </shape>

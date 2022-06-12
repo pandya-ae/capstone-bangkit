@@ -8,8 +8,12 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 
-class RegisterViewModel: ViewModel() {
-    suspend fun userRegister(name: String, email: String, password: String): Flow<Result<RegisterResponse>> = flow {
+class RegisterViewModel : ViewModel() {
+    suspend fun userRegister(
+        name: String,
+        email: String,
+        password: String
+    ): Flow<Result<RegisterResponse>> = flow {
         try {
             val response = ApiConfig.getApiService().register(name, email, password)
             emit(Result.success(response))

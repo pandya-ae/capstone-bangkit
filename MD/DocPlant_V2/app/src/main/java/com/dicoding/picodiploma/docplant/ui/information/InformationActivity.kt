@@ -1,7 +1,7 @@
 package com.dicoding.picodiploma.docplant.ui.information
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.dicoding.picodiploma.docplant.R
 
 class InformationActivity : AppCompatActivity() {
